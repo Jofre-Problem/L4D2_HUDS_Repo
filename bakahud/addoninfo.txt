@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+     addonSteamAppID         "550"
+     addontitle              "BakaUI" 
+     addonversion            "1.0"
+     addontagline            "Baka UI"
+     addonauthor             "Blackch"
+     addonURL0               "http://steamcommunity.com/id/KashimuraSana/"
+     addonDescription        "None"
+}

@@ -1,0 +1,339 @@
+"Resource/UI/HUD/LocalPlayerPanel.res"
+{
+	"CustomCrosshair" // CUSTOM CROSSHAIR SUPPORT (Hey, you, modder! Don't touch this if you want to keep custom crosshair support)
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"	"CustomCrosshair"
+		"xpos"	"c-28" // c-28
+		"ypos"	"c-28" // c-28
+		"zpos"	"-1"
+		"wide"	"56"
+		"tall"	"56"
+		"visible"	"1" // "1" to Enable, "0" to Disable
+		"enabled"	"1"
+		"scaleImage"	"1"
+		"autoResize"	"0"
+		"pinCorner"	"0"
+		"image"	"gfx\vgui\defaultweapon"
+		"drawcolor"	"255 255 255 255"
+	}
+	
+	"CRHB" //CENTERED RADIAL HEALTH BAR SUPPORT
+	{
+		"ControlName"	"CircularProgressBar"
+		"fieldName"		"CRHB"
+		"xpos"	"c-28" // c-28
+		"ypos"	"c-28" // c-28
+		"zpos"	"0"
+		"wide"	"56"
+		"tall"	"56"
+		"visible"		"1"
+		"enabled"		"1"
+		"scaleImage"	"1"
+		"autoResize"	"0"
+		"pinCorner"	"0"
+		"fg_image"		"gfx\vgui\trans_background"
+		"bg_image"		"gfx\vgui\trans_background"
+		"variable"		"HealthNumber"
+		"bgcolor_override" "64 64 64 128"
+	}
+	
+	"BackgroundPanel"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"BackgroundPanel"
+		"xpos"			"r123"
+		"ypos"			"r76"
+		"wide"			"70"
+		"tall"			"70"
+		"zpos"			"-1"
+		"visible"		"1"
+		"enabled"		"1"
+		"scaleImage"	"1"
+		"image"			"hud/p2hud/p2hud_bloodsplat"
+		"drawColor"	"180 180 180 255"
+	}
+	
+	"BloodBG"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"BloodBG"
+		"xpos"			"r139"
+		"ypos"			"r57"
+		"wide"			"78"
+		"tall"			"58"
+		"zpos"			"-2"
+		"visible"		"1"
+		"enabled"		"1"
+		"scaleImage"	"1"
+		"image"			"hud/p2hud/p2hud_teammate_bg2"
+		"drawcolor"	"171 171 171 255"
+	}
+	
+	"Heart"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"Heart"
+		"xpos"			"r107"
+		"ypos"			"r68" 
+		"wide"			"39"
+		"tall"			"39"
+		"zpos"			"1"
+		"visible"		"1"
+		"enabled"		"1"
+		"scaleImage"	"1"
+		"image"			"hud/p2hud/p2hud_heart"
+	}
+	
+	"Voice"
+	{
+		"ControlName"	"TeamDisplayVoicePanel"
+		"fieldName"		"Voice"
+		"xpos"			"r142"
+		"ypos"			"r35"
+		"wide"			"50"
+		"tall"			"50"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"3"
+		"voice_icon"	"voice_self"
+	}
+	
+	"Dead"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"Dead"
+		"xpos"			"r123"
+		"ypos"			"r76"
+		"wide"			"70"
+		"tall"			"70"
+		"zpos"			"3"
+		"visible"		"1"
+		"enabled"		"1"
+		"scaleImage"	"1"
+		"image"			"hud/p2hud/p2hud_dead_player"
+		"drawColor"	"180 180 180 255"
+	}
+	
+	"Health"
+	{
+		"ControlName"	"HealthPanel"
+		"fieldName"		"Health"
+		"xpos"			"r142" //r88
+		"ypos"			"r12"
+		"wide"			"80"
+		"tall"			"4"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"1"
+		
+		"new_material_style"	"1"
+		"healthbar_image_high"			"vgui/hud/p2hud/p2hud_healthbar_green"
+		"healthbar_image_medium"		"vgui/hud/p2hud/p2hud_healthbar_orange"
+		"healthbar_image_low"			"vgui/hud/p2hud/p2hud_healthbar_red"
+		"healthbar_image_grey"			"vgui/hud/healthbar_withglow_white"
+		
+		"healthbar_image_high_ticks"	"vgui/hud/p2hud/p2hud_healthbar_green_temp"
+		"healthbar_image_medium_ticks"	"vgui/hud/p2hud/p2hud_healthbar_orange_temp"
+		"healthbar_image_low_ticks"		"vgui/hud/p2hud/p2hud_healthbar_red_temp"
+		"healthbar_image_grey_ticks"	"vgui/hud/healthbar_ticks_withglow_white"			
+	}
+	
+	"HealthNumber"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"HealthNumber"
+		"xpos"			"r158"
+		"ypos"			"r32"
+		"wide"			"70"
+		"tall"			"26"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"%HealthNumber%"
+		"textAlignment"	"east"
+		"font"			"MenuTitle_DropShadow" 
+		"zpos"			"2"
+	}
+	
+	"OutOf100"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"OutOf100"
+		"xpos"			"r133"
+		"ypos"			"r32"
+		"wide"			"70"
+		"tall"			"26"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"/100"
+		"textAlignment"	"east"
+		"font"			"InstructorTitle_ss" 
+		"zpos"			"2"
+		"fgcolor_override" "169 169 169 255"
+	}
+	
+	"KeyBinding_Primary_Label"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"KeyBinding_Primary_Label"
+		"xpos"			"r20"
+		"ypos"			"r136"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"1"
+		"textAlignment"	"center"
+		"font"			"PlayerDisplayNameSmall"
+		"zpos"			"3"
+		"fgcolor_override" "169 169 169 255"
+	}
+	
+	"KeyBinding_Primary_BG"
+	{
+		"ControlName"	"CIconPanel"
+		"fieldName"		"KeyBinding_Primary_BG"
+		"xpos"			"r20"
+		"ypos"			"r136"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"2"
+		"scaleImage"	"1"
+		"icon"			"itempickup_background"
+		"iconcolor"		"32 32 32 255"
+	}
+	
+	"KeyBinding_Secondary_Label"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"KeyBinding_Secondary_Label"
+		"xpos"			"r20"
+		"ypos"			"r108"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"2"
+		"textAlignment"	"center"
+		"font"			"PlayerDisplayNameSmall"
+		"zpos"			"3"
+		"fgcolor_override" "169 169 169 255"
+	}
+	
+	"KeyBinding_Secondary_BG"
+	{
+		"ControlName"	"CIconPanel"
+		"fieldName"		"KeyBinding_Secondary_BG"
+		"xpos"			"r20"
+		"ypos"			"r108"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"2"
+		"scaleImage"	"1"
+		"icon"			"itempickup_background"
+		"iconcolor"		"32 32 32 255"
+	}
+	
+	"KeyBinding_Throwable_Label"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"KeyBinding_Throwable_Label"
+		"xpos"			"r20"
+		"ypos"			"r81"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"3"
+		"textAlignment"	"center"
+		"font"			"PlayerDisplayNameSmall"
+		"zpos"			"3"
+		"fgcolor_override" "169 169 169 255"
+	}
+	
+	"KeyBinding_Throwable_BG"
+	{
+		"ControlName"	"CIconPanel"
+		"fieldName"		"KeyBinding_Throwable_BG"
+		"xpos"			"r20"
+		"ypos"			"r81"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"2"
+		"scaleImage"	"1"
+		"icon"			"itempickup_background"
+		"iconcolor"		"32 32 32 255"
+	}
+	
+	"KeyBinding_Health_Label"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"KeyBinding_Health_Label"
+		"xpos"			"r20"
+		"ypos"			"r54"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"4"
+		"textAlignment"	"center"
+		"font"			"PlayerDisplayNameSmall"
+		"zpos"			"3"
+		"fgcolor_override" "169 169 169 255"
+	}
+	
+	"KeyBinding_Health_BG"
+	{
+		"ControlName"	"CIconPanel"
+		"fieldName"		"KeyBinding_Health_BG"
+		"xpos"			"r20"
+		"ypos"			"r54"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"2"
+		"scaleImage"	"1"
+		"icon"			"itempickup_background"
+		"iconcolor"		"32 32 32 255"
+	}
+	
+	"KeyBinding_TempHealth_Label"
+	{
+		"ControlName"	"Label"
+		"fieldName"		"KeyBinding_TempHealth_Label"
+		"xpos"			"r20"
+		"ypos"			"r27"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"5"
+		"textAlignment"	"center"
+		"font"			"PlayerDisplayNameSmall"
+		"zpos"			"3"
+		"fgcolor_override" "169 169 169 255"
+	}
+	
+	"KeyBinding_TempHealth_BG"
+	{
+		"ControlName"	"CIconPanel"
+		"fieldName"		"KeyBinding_TempHealth_BG"
+		"xpos"			"r20"
+		"ypos"			"r27"
+		"wide"			"12"
+		"tall"			"12"
+		"visible"		"1"
+		"enabled"		"1"
+		"zpos"			"2"
+		"scaleImage"	"1"
+		"icon"			"itempickup_background"
+		"iconcolor"		"32 32 32 255"
+	}
+}

@@ -1,0 +1,14 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\nexthud\bar"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+$color "{3 178 46}"
+
+$basetexturetransform "center 0 0 scale 35.2 1 rotate 0 translate 0.5 0" //scale 64.2 1 rotate 0 translate 0.5 0
+}

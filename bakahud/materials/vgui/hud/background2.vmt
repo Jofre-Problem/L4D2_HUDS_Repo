@@ -1,0 +1,5 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\background2"
+$translucent 1
+}

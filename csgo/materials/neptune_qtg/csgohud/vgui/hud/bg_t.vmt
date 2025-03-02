@@ -1,0 +1,13 @@
+UnlitGeneric
+{
+
+
+$translucent 1
+$baseTexture "Neptune_QTG\CSGOHUD\VGUI\hud\bg_t"
+$vertexcolor 1
+$vertexalpha 1
+$no_fullbright 1
+$ignorez 1
+$additive 0
+$nomip 1
+}

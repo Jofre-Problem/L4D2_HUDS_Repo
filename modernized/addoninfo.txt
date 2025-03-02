@@ -1,0 +1,14 @@
+"AddonInfo"
+{
+    addonSteamAppID     500
+    addontitle          "Modernized L4D HUD v1.1"
+    addonversion        0.5
+    addontagline        "Custom Portraits"
+    addonauthor         "ihcorochris"
+
+    addonContent_Campaign        0
+
+    addonURL0 "http://www.fitterblog.com/"
+
+    addonDescription "A more up-to-date HUD but keeping existing elements from Left 4 Dead"
+}

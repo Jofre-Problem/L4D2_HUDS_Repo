@@ -1,0 +1,12 @@
+// The addoninfo.txt file is a metadata file that is required by all Source Engine Add-ons. 
+ 
+"AddonInfo"
+{
+     addonSteamAppID         550					
+     addontitle              "GenShin HUD"			
+     addonversion            "1.0"				
+     addontagline            "Version 1.0" 					
+     addonauthor             "HCHA"  									
+     addonauthorSteamID      "HCHA"                                                        
+     addonDescription        "" 
+}

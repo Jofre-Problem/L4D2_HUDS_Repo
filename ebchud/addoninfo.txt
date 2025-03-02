@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+addonSteamAppID "550"
+addontitle "EBC Hud"
+addonversion "3.0"
+addonauthor "Lady Shinku (soporhs)"
+addonDescription "Exclusive L4D2 HUD with unique features, including speedometer and timer."
+addonauthorSteamID      "ShinkuRozenMaiden"
+addonURL0               "to be added"
+}

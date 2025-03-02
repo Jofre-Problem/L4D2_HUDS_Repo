@@ -1,0 +1,50 @@
+//汉化:BY Neptune
+"AddonInfo"
+{
+// 求生之路2steam游戏id
+     addonSteamAppID			"550"
+// mod在addons里面显示的标题,最多20个字符
+     addontitle				"CSGOHUD"
+// mod描述,最多20个字符
+     addonDescription		""
+// mod版本
+     addonversion			"0.0.5.0"
+// 加上标语或结束-一个简短的描述,最多100个字符
+     addontagline			""
+// 作者/贡献者steamid
+     addonauthor			"Neptune"	  
+// ???
+     addonContent_Versus    0
+// (可选) 和mod有关的steam组链接
+     addonSteamGroupName     ""
+// (可选) 作者的steam链接
+     addonauthorSteamID      "http://steamcommunity.com/id/QTGken/ "
+// 这个插件提供了多连接的地图与结局
+     addonContent_Campaign 0
+// 包含下载链接的附件的HTML主页。
+     addonURL0               " "
+// 出现在“addons”屏幕中的简短描述…
+     addonDescription        ""
+// 作者可以在这里添加本地化描述. (尚未得到支持)
+     addonDescription_FR   	""
+// 提供背景电影的替换。
+     addonContent_BackgroundMovie   0
+// 提供新的幸存者模型。0 = 关闭，1 = 开启，引号中的字符串如果替换特定的单个幸存者，比如“Francis”
+     addonContent_Survivor          0
+// 提供新的boss模型,打破这些？
+     addonContent_BossInfected       0
+// 提供新的常见感染模型。
+     addonContent_CommonInfected    0
+// 对现有武器提供新的外观，但不改变其功能。
+     addonContent_WeaponModel      1
+// 提供了新的武器和新的僵尸杀人的功能，如枪支、炸药、陷阱、热沥青.(PS:what?)
+     addonContent_weapon          0
+// 0=现有模型没有新的皮肤纹理,1=如果多个皮肤包。如果特定的皮肤，引号中的字符串
+     addonContent_Skin             0
+// 提供新喷漆. 
+     addonContent_Spray             0
+// 添加独立地图
+     addonContent_Map             0
+// 有脚本
+     addonContent_Scrip		0
+}

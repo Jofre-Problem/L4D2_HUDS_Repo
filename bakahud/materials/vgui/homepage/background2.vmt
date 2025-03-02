@@ -1,0 +1,5 @@
+UnlitGeneric
+{
+$baseTexture "vgui\homepage\background2"
+$translucent 1
+}

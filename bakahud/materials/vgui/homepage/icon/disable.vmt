@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/homepage/icon/disable"
+	"$translucent" 1
+}

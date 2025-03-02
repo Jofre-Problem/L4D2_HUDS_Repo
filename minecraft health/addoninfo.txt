@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	addonSteamAppID 	550
+	addontitle		"Immersive Minecraft Health Bar" 
+	addonversion		"1.0"
+	addontagline		"health bars" 
+	addonauthor 		"BurntPutito"
+	addonDescription 	"A simple immersive Minecraft Health Bar that features different kinds of hearts depending on the current HP"
+}

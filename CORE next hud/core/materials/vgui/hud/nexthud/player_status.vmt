@@ -1,0 +1,42 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\nexthud\player_status"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+//VARS
+$zero 0
+$one 1
+$two 2
+$player_speed 0
+$trigger_speed 151
+
+Proxies
+{
+	PlayerSpeed
+	{
+		scale 1
+		resultVar "$player_speed"
+	}
+	LessOrEqual
+	{
+		lessEqualVar "$zero"
+		greaterVar 	 "$one"
+		srcVar1 	 "$player_speed"
+		srcVar2 	 "$one"
+		resultVar	 "$frame"
+	}
+	LessOrEqual
+	{
+		lessEqualVar "$frame" //if less or equal don't do anything
+		greaterVar 	 "$two"
+		srcVar1 	 "$player_speed"
+		srcVar2 	 "$trigger_speed"
+		resultVar	 "$frame"
+	}
+}
+}

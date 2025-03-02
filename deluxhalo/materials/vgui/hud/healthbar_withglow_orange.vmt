@@ -1,0 +1,28 @@
+UnlitGeneric
+{
+
+
+$translucent 1
+$basetexture "VGUI\hud\healthbar_withglow_orange"
+$vertexcolor 1
+$vertexalpha 1
+$no_fullbright 1
+$ignorez 1
+$additive 0
+$nomip 1
+
+
+"Proxies"
+	{
+"Sine"
+{
+"resultVar"	"$alpha"
+"sineperiod"	1.0
+"sinemin"		0.5
+"sinemax"	2
+//"timeoffset"	0
+}
+
+
+
+}

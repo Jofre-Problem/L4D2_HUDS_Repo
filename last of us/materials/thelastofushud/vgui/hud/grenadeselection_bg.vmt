@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture" "thelastofushud/vgui/hud/grenadeselection_bg"
+	"$additive" 1
+	"$nolod" 1
+	"$translucent" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
+}

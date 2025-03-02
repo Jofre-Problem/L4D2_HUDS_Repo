@@ -1,0 +1,31 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\nexthud\bar_temp"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+$color "{220 220 220}"
+$basetexturetransform "center 0 0 scale 28 1 rotate 0 translate -0.25 0" //scale 64.2 1 rotate 0 translate 0.5 0
+
+Proxies
+	{
+		Sine
+		{
+			sineperiod 2
+			sinemin 0
+			sinemax 0.75
+			resultVar "$color[1]"
+		}
+		Sine
+		{
+			sineperiod 2
+			sinemin 0
+			sinemax 0.75
+			resultVar "$color[2]"
+		}
+	}
+}

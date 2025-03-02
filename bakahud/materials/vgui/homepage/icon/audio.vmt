@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/homepage/icon/audio"
+	"$translucent" 1
+}

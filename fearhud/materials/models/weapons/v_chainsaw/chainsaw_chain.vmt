@@ -1,0 +1,11 @@
+VertexLitGeneric
+{
+$basetexture "models\weapons\V_chainsaw\chainsaw_chain"
+$phong 1
+$phongboost 8
+$phongexponent 4
+$phongfresnelranges "[.2 .7 1]"
+$basemapalphaphongmask 1
+$halflambert 0
+$phongalbedotint 1
+}

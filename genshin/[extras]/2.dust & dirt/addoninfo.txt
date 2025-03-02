@@ -1,0 +1,12 @@
+// The addoninfo.txt file is a metadata file that is required by all Source Engine Add-ons. 
+ 
+"AddonInfo"
+{
+     addonSteamAppID         550					
+     addontitle              "SCHISM H.U.D.-Dust&Dirt"			
+     addonversion            "2.0"				
+     addontagline            "Version 2.0" 					
+     addonauthor             "Red Schism"  									
+     addonauthorSteamID      "Red Schism"                                                        
+     addonDescription        "" 
+}

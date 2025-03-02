@@ -1,0 +1,13 @@
+UnlitGeneric
+{
+
+
+$translucent 1
+$basetexture "thelastofushud\VGUI\hud\healthbar_player_image_incap_t"
+$vertexcolor 1
+$vertexalpha 1
+$no_fullbright 1
+$ignorez 1
+$additive 0
+$nomip 1
+}

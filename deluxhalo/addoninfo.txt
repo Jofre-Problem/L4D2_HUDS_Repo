@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+     addonSteamAppID         "550"
+     addontitle              "- Delux Halo Hud -" 
+     addonversion            "2"
+     addonauthor             "Emperor Doom"
+     addonauthorSteamID      "MiserTrioxin"
+     addonURL0               "http://steamcommunity.com/id/emperordoom/myworkshopfiles/?appid=550"
+     addonDescription        "Why, Halo there!" 
+}
+ 

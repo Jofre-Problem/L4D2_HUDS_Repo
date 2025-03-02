@@ -1,0 +1,22 @@
+UnlitGeneric
+{
+
+
+$translucent 1
+$basetexture "thelastofushud\VGUI\hud\icon\icon_player_incap"
+$vertexcolor 1
+$vertexalpha 1
+$no_fullbright 1
+$ignorez 1
+$additive 0
+$nomip 1
+
+Proxies
+{
+thelastofushud
+{ 
+thelastofushudVar $basetexture 
+thelastofushudFrameNumVar $frame
+thelastofushudFrameRate 10 //this is the FPS that the texture will animate at
+}
+}

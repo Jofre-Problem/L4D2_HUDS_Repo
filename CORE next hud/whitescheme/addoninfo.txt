@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+	addonSteamAppID		 "550"
+	addonversion		 "1.0"
+	addontitle		 "nextHUD - White Color Scheme (Compact)"
+	addonauthor		 "tomaz"
+	addonDescription	 ""
+	addonURL0 		 "https://steamcommunity.com/id/tomaz_xyz/myworkshopfiles/?p=1&numperpage=30"
+	AddonContent_Skin      "1"
+}

@@ -1,0 +1,22 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\p2hud\p2hud_healthbar_temp"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+$color "{180 20 13}"
+
+"Proxies"
+{
+	"AnimatedTexture"
+	{	
+		"animatedTextureVar" "$basetexture"
+		"animatedTextureFrameNumVar" "$frame"
+		"animatedTextureFrameRate" "25"
+	}
+}
+}

@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+$baseTexture "models\w_models\eq_laser_sights\w_laser_sights"
+$basealphaenvmapmask 1
+}
