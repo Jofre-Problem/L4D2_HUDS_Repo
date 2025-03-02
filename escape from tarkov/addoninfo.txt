@@ -1,0 +1,22 @@
+"AddonInfo"	
+{  						
+
+     "addonSteamAppID"							"550"						
+     "addontitle"											"Escape from Tarkov HUD"			
+     "addonversion"										"1.0"						
+     "addontagline"										""								
+     "addonauthor"										"You"						
+     "addonauthorSteamID"						"You"						
+     "addonContent_Campaign"				"0"							
+     "addonContent_Map"							"0"							
+     "addonContent_Skin"							"0"							
+     "addonContent_Weapon"					"0"							
+     "addonContent_BossInfected"			"0"							
+     "addonContent_CommonInfected"	"0"							
+     "addonContent_Survivor"					"0"							
+     "addonContent_Sound"						"0"							
+     "addonContent_Script"						"0"							
+     "addonURL0"										""								
+     "addonDescription								"Replaced in game HUD"								
+	 
+}						
