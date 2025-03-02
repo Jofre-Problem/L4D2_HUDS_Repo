@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/hud/overlay_dead"
+	"$translucent" 1
+}

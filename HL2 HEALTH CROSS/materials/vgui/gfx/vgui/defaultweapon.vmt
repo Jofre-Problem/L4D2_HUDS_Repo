@@ -1,0 +1,9 @@
+UnlitGeneric
+{
+$basetexture "crosshairs/crosshair"
+$translucent 1
+$vertexcolor 1
+$vertexalpha 1
+
+$alpha 0.3
+}

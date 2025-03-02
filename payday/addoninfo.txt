@@ -1,0 +1,9 @@
+ "AddonInfo"
+{
+     addonSteamAppID         550 //L4D2 Don't Change
+     addontitle              "Payday 2 Style HUD" //Name for Addon Menu
+     addonversion            1
+     addonauthor             "Interneted"
+     addonauthorSteamID      "AUTHOT_STEAM_ID" //Optional. the number of your steam profile URL
+     addonDescription        "Payday 2 Style HUD"
+}

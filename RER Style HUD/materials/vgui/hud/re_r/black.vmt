@@ -1,0 +1,12 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\re_r\vtf\white"
+$translucent 1
+$alpha 0.5
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+$color "[0 0 0]"
+}

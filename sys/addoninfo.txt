@@ -1,0 +1,25 @@
+"AddonInfo"
+{
+addontitle "[SYS-HUD] Menu options for SYS" 
+addonversion 1
+addontagline "" 
+addonauthor "Ellie"
+addonauthorSteamID "ellie_williams"
+addonDescription "This enables visual hints to be displayed when you use the SYS/RNG technology to select your skins."
+
+addonContent_Script 1
+addonContent_Music 0
+addonContent_Sound 0
+addonContent_prop 0 
+addonContent_Prefab 0 
+
+addonContent_BackgroundMovie 0 
+addonContent_Survivor 0 
+addonContent_BossInfected 0
+addonContent_CommonInfected 0 
+addonContent_WeaponModel 0
+addonContent_weapon 0 
+addonContent_Skin 0
+addonContent_Spray 0 
+addonContent_Map 0
+}

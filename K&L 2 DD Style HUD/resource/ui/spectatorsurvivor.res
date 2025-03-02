@@ -1,0 +1,4 @@
+"Resource/UI/SpectatorSurvivor.res"
+{
+
+}

@@ -1,0 +1,15 @@
+"AddonInfo"
+{
+     addonSteamAppID         550
+     addontitle              "【CS2HUD】"
+     addonversion            "2.3"
+     addonauthor             "Yarou"
+     addonDescription        "Inspired by 20Cat's CS2 HUD."
+}
+
+// *********************************************************
+// Special thanks to:
+// 20Cat for menus, ideas and advice
+// tomaz for voice chat icon replace
+// _Ilshat52_ for help
+// *********************************************************

@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+     addonSteamAppID         "550"
+     addontitle              "Republic Commando HUD" 
+     addonversion            "4.0"
+     addonauthor             "jance"
+     addonDescription        "Adds the HUD of Star Wars: Republic Commando to L4D2" 
+}
+ 

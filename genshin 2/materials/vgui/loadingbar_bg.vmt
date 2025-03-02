@@ -1,0 +1,5 @@
+UnlitGeneric
+{
+$basetexture "vgui\yarou\blank"
+$translucent 1
+}

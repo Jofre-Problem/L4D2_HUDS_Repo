@@ -1,0 +1,13 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\iconsheet"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+//poorly crop out of sheet
+$basetexturetransform "center 0 0 scale 0.13 0.13 rotate 0 translate 1.62 1.375"
+}

@@ -1,0 +1,14 @@
+"UnlitGeneric"
+{
+	"$basetexture" "engine/l4d_spinner"
+	"$translucent" 1
+	"Proxies"
+ 	{
+	"AnimatedTexture"
+		{
+			"animatedTextureVar" "$basetexture"
+			"animatedTextureFrameNumVar" "$frame"
+			"animatedTextureFrameRate" "40"
+		}
+	}
+}

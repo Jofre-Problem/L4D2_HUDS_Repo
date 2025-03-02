@@ -1,0 +1,5 @@
+(1920x1080 / 1600x900 / 1280x720)
+
+This feature is currently is an early beta state and has not been ajusted for 
+all resolutions.
+

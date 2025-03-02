@@ -1,0 +1,7 @@
+UnlitGeneric
+{
+$basetexture "vgui/borrowed/ui_menu/icon_64x64"
+$frame 31
+$translucent 1
+$ignorez 1
+}

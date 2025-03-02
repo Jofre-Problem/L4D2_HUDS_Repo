@@ -1,0 +1,52 @@
+UnlitGeneric
+{
+
+	$basetexture 		"vgui/sys/warning"
+	$translucent		"1"
+
+	$vprofActive		"0"
+	$budgetActive		"0"
+
+	$warning			"0"
+
+	$zero			"0"
+	$one			"1"
+
+	$alpha			"1"
+
+Proxies
+{
+
+	ConVar			
+	{
+		convar		"showbudget_texture"
+		resultVar		"$budgetActive"
+	}
+
+	ConVar			
+	{
+		convar		"vprof"
+		resultVar		"$vprofActive"
+	}
+
+	Add
+	{
+		srcVar1		"$budgetActive"
+		srcVar2 		"$vprofActive"
+		resultVar 		"$warning"
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$zero"
+          		greaterVar 	"$one"
+          	 	srcVar1 		"$warning"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$alpha"    
+       	}
+
+
+}
+
+
+}

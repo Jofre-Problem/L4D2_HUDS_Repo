@@ -1,0 +1,9 @@
+ "AddonInfo"
+{
+     addonSteamAppID         550 //L4D2 Don't Change
+     addontitle              "Survivor Intensity Enabler (Default HUD)" //Name for Addon Menu
+     addonversion            1
+     addonauthor             "AUTHOR_NAME"
+     addonauthorSteamID      "AUTHOT_STEAM_ID" //Optional. the number of your steam profile URL
+     addonDescription        "Survivor Intensity Enabler (Default HUD)"
+}

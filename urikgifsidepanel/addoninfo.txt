@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	addonSteamAppID     "550"
+	addontitle			"Urik Animated Sidepanel (green)"
+	addonauthor 		"Urik_Kane"
+	addonversion		""
+	addonDescription	"Doesn't require any HUD, standalone. Doesn't conflict with UrikHUD / SimpleHUD"
+
+	addonContent_GUI	"1"
+	addonContent_UI	"1"
+}

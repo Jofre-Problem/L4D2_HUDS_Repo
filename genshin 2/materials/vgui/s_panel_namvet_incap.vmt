@@ -1,0 +1,23 @@
+UnlitGeneric
+{
+
+
+$translucent 1
+$basetexture "VGUI\s_panel_namvet"
+$vertexcolor 1
+$no_fullbright 1
+$ignorez 1
+$offset 0
+
+Proxies
+	{
+		Sine
+		{
+		"sineperiod"	"1"
+		"sinemin"		"0.25"
+		"sinemax"		"1"
+		"timeoffset"	"$offset"
+		"resultVar"		"$alpha"
+		}
+	}
+}

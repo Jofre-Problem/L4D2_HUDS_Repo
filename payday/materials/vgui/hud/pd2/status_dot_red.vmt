@@ -1,0 +1,12 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\pd2\vtf\status_dot"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+$color "[0.51 0.16 0.12]"
+}

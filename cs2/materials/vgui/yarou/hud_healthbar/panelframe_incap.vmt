@@ -1,0 +1,24 @@
+UnLitGeneric
+{
+$translucent 1
+$basetexture "vgui/yarou/hud_healthbar/panelframe_incap"
+$vertexcolor 1
+$vertexalpha 1
+$no_fullbright 1
+$ignorez 1
+$additive 0
+$nomip 1
+$offset 0
+
+Proxies
+	{
+		Sine
+		{
+		"sineperiod"	"1"
+		"sinemin"		"0.25"
+		"sinemax"		"1"
+		"timeoffset"	"$offset"
+		"resultVar"		"$alpha"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+"AddonInfo"
+{
+    addonSteamAppID     500
+    addontitle          "VerminHud"
+    addonversion        0.5
+    addontagline        "Custom Health Bars and Portraits"
+    addonauthor         "Eranthis"
+
+    addonContent_Campaign        0
+
+    addonURL0 "http://www.fitterblog.com/"
+
+    addonDescription "Stylized healthbars and character portraits mirroring UI from Vermintide 2."
+}

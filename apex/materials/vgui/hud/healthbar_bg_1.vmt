@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/hud/healthbar_bg_1"
+	"$translucent" 1
+}

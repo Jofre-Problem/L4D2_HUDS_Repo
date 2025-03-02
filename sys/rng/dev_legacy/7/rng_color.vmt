@@ -1,0 +1,555 @@
+"VertexLitGeneric"
+{
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$color				"[1 1 1]"
+	$blendtintbybasealpha 		"1"	
+	
+	$oneSkinPerMap		"0"		// The user can change this variable to only allow one skin per map
+
+	$VMTColorOffset		"0"		// The user can change this to change what clothes randomize together or not
+
+	$activateEXTR		"0"		// The user can activate this thing to also randomize the $basetexture frame albedo (RNG)
+
+	 $boomerEffects		"0"		// The user can change this variable and unquote what's below to activate Boomer vomit effects
+	 // $detail 		"models/survivors/survivor_it"
+	 // $detailscale 		3
+	 // $detailblendfactor 	".001" 
+	 // $detailblendmode 	"0"
+
+	$meleeBloodEffects		"0"		// The user can change this variable and unquote what's below to activate Blood on melee weapons
+	// $detail 			"models/infected/hunter/hunter_01_detail"
+	// $detailscale 		"1.75"
+	// $detailblendfactor 	.001 
+	// $detailblendmode 	"0"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$checkMax		"0.0"
+	$maxFrame		"0.0"
+	$maxFramePlusOne		"1.0"
+	$countingFinished		"0.0"
+
+	$randEXTR		"0.0"
+	$randEXTRStored		"0.0"
+	$randEXTRInject		"0.0"
+	$randEXTROverflow	"0.0"
+	$injectEXTR		"0.0"
+	$RNGframeEXTR		"0.0"
+	
+	$rerollRaw		"0"
+	$rerollRawStored		"0"
+	$rerollRNG		"0"
+
+	$randSYS		"0.0"
+	$randSYSTemp		"0.0"
+	$randSYSOverflow		"0.0"
+
+	$ramp			"0"
+		
+	$prepareStore		"1000.0"
+	$randSYSStored		"1000.0"
+	$randSYSInject		"0.0"
+
+	$roundOffset		"0.05"
+	$randOffset		"1000.0"
+	$randOffsetDIV		"100.0"
+
+	$injectColor		"0.0"
+	$RNGInjectColor		"0.0"
+
+	$colorReds		"0.0"
+	$colorGreens		"0.0"
+	$colorBlues		"0.0"
+
+	$tempDIV			"0.0"
+	$tempMULT		"0.0"
+	$tempFRAC		"0.0"
+	$tempOFFSET		"0.0"
+
+	$CHOSENinjectColor	"0"
+
+	$boomerAmount		"0.0"
+	$bloodAmount		"0.0"
+
+	$mo			"-1"
+	$zero			"0.0"
+	$one			"1.0"
+	$two			"2.0"
+	$three			"3"
+	$four			"4"
+	$ten			"10"
+	$oh			"100"
+	$tff			"255"
+	$fh			"500"
+	$nnn			"999"
+	$ot			"1000"
+
+Proxies
+{
+
+	AnimatedTexture				
+	{
+		animatedtexturevar 			"$basetexture" 
+		animatedtextureframenumvar		"$checkMax"	
+		animatedtextureframerate		"25"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$maxFrame"
+		greaterVar 	"$checkMax"
+		srcVar1 		"$checkMax"
+		srcVar2 		"$maxFrame"
+		resultVar 		"$maxFrame"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$one"
+		greaterVar 	"$countingFinished"
+		srcVar1 		"$checkMax"
+		srcVar2 		"$zero"
+		resultVar 		"$countingFinished"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$zero"
+		greaterVar 	"$countingFinished"
+		srcVar1 		"$maxFrame"
+		srcVar2 		"$zero"
+		resultVar 		"$countingFinished"    
+	}
+
+	Add		
+	{
+		srcVar1 		"$maxFrame"
+		srcVar2 		"$one"
+		resultVar 		"$maxFramePlusOne"
+	}
+
+	Divide	
+	{
+		srcVar1 		"$randOffset"
+		srcVar2 		"$ten"
+		resultVar 		"$randOffsetDIV"
+	}
+
+	Divide
+	{
+		srcVar1 		"$randOffsetDIV"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$tempDIV"    
+	}
+
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$tempDIV"    
+	}
+
+	Add
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$roundOffset"
+		resultVar 		"$randOffsetDIV"    
+	}
+
+	EntityRandom
+	{
+          	 	scale		"$maxFramePlusOne"         
+          	 	resultVar 		"$randEXTR"  
+	}
+
+	Add
+	{
+		srcVar1 		"$randEXTR"
+		srcVar2 		"$randOffsetDIV"
+		resultVar 		"$randEXTR"    
+	}
+
+	Subtract
+	{
+		srcVar1 		"$randEXTR"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$randEXTROverflow"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTR"
+		greaterVar 	"$randEXTROverflow"
+		srcVar1 		"$randEXTR"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$randEXTR"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$prepareStore"
+		greaterVar 	"$randEXTR"
+		srcVar1 		"$countingFinished"
+		srcVar2 		"$zero"
+		resultVar 		"$prepareStore"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTRStored"
+		greaterVar 	"$prepareStore"
+		srcVar1 		"$randEXTRStored"
+		srcVar2 		"$fh"
+		resultVar 		"$randEXTRStored"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTR"
+		greaterVar 	"$randEXTRStored"
+		srcVar1 		"$oneSkinPerMap"
+		srcVar2 		"$zero"
+		resultVar 		"$randEXTRInject"    
+	}
+
+	Multiply			
+	{
+		srcVar1 		"$countingFinished"
+		srcVar2 		"$randEXTRInject"
+		resultVar 		"$injectEXTR"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$injectEXTR"
+		srcVar2 		"$activateEXTR"
+		resultVar 		"$RNGframeEXTR"    
+	}
+
+	ConVar			
+	{
+		convar		"cl_buy_favorite_nowarn"
+		resultVar		"$rerollRaw"
+	}
+
+	Int
+	{
+		srcVar1 		"$rerollRaw"
+		resultVar 		"$rerollRaw"    
+	}
+
+	Subtract
+	{
+		srcVar1 		"$rerollRaw"
+		srcVar2 		"$rerollRawStored"
+		resultVar 		"$rerollRNG"    
+	}
+
+	Abs
+	{
+		srcVar1		"$rerollRNG"
+		resultVar		"$rerollRNG"	
+	}
+
+	Equals
+	{
+		srcVar1 		"$rerollRaw"
+		resultVar 		"$rerollRawStored"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randOffset"
+		greaterVar 	"$ot"
+		srcVar1 		"$rerollRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$randOffset"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYSStored"
+		greaterVar 	"$zero"
+		srcVar1 		"$rerollRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSStored"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTRStored"
+		greaterVar 	"$ot"
+		srcVar1 		"$rerollRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$randEXTRStored"    
+	}
+
+	LinearRamp
+	{
+          	 	rate		"10"         
+          	 	resultVar 		"$ramp"  
+	}
+
+	Int		
+	{
+		srcVar1 		"$ramp"
+		resultVar 		"$ramp"    
+	}
+
+	Divide
+	{
+		srcVar1 		"$ramp"
+		srcVar2 		"$ot"
+		resultVar 		"$tempDIV"    
+	}
+
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$ot"
+		resultVar 		"$tempDIV"    
+	}
+
+	Add
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$roundOffset"
+		resultVar 		"$tempDIV"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randOffset"
+		greaterVar 	"$tempDIV"
+		srcVar1 		"$randOffset"
+		srcVar2 		"$nnn"
+		resultVar 		"$randOffset"    
+	}
+
+	EntityRandom
+	{
+          	 	scale		"999"         
+          	 	resultVar 		"$randSYSTemp"  
+	}
+
+	Add
+	{
+		srcVar1		"$randSYSTemp"
+		srcVar2 		"$randOffset"
+		resultVar		"$randSYSTemp"	
+	}
+
+	Subtract
+	{
+		srcVar1		"$randSYSTemp"
+		srcVar2 		"$ot"
+		resultVar		"$randSYSOverflow"	
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYSTemp"
+		greaterVar 	"$randSYSOverflow"
+		srcVar1 		"$randSYSTemp"
+		srcVar2 		"$ot"
+		resultVar 		"$randSYS"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYS"
+		greaterVar 	"$randSYSStored"
+		srcVar1 		"$randSYSStored"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSStored"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYS"
+		greaterVar 	"$randSYSStored"
+		srcVar1 		"$oneSkinPerMap"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSInject"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$RNGinjectColor"
+		greaterVar 	"$randSYSInject"
+		srcVar1 		"$randSYS"
+		srcVar2 		"$zero"
+		resultVar 		"$RNGinjectColor"    
+	}
+
+	Add
+	{
+		srcVar1 		"$RNGinjectColor"
+		srcVar2 		"$VMTColorOffset"
+		resultVar 		"$RNGinjectColor"    
+	}
+
+	Equals		
+	{
+		srcVar1 		"$RNGinjectColor"
+		resultVar 		"$CHOSENinjectColor"
+	}
+
+	Equals		
+	{
+		srcVar1 		"$RNGframeEXTR"
+		resultVar 		"$frame"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$frame"
+		greaterVar 	"$maxframe"
+		srcVar1 		"$frame"
+		srcVar2 		"$maxframe"
+		resultVar 		"$frame"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$ten"
+		resultVar 		"$colorReds"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$oh"
+		resultVar 		"$colorGreens"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$ot"
+		resultVar 		"$colorBlues"
+	}
+
+	Frac
+	{
+		srcVar1 		"$colorReds"
+		resultVar 		"$colorReds"
+	}
+
+	Frac
+	{
+		srcVar1 		"$colorBlues"
+		resultVar 		"$colorBlues"
+	}
+
+	Frac
+	{
+		srcVar1 		"$colorGreens"
+		resultVar 		"$colorGreens"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$colorReds"
+		srcVar2 		"$ten"
+		resultVar 		"$colorReds"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$colorGreens"
+		srcVar2 		"$ten"
+		resultVar 		"$colorGreens"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$colorBlues"
+		srcVar2 		"$ten"
+		resultVar 		"$colorBlues"
+	}
+
+	Int
+	{
+		srcVar1 		"$colorReds"
+		resultVar 		"$colorReds"
+	}
+
+	Int
+	{
+		srcVar1 		"$colorBlues"
+		resultVar 		"$colorBlues"
+	}
+
+	Int
+	{
+		srcVar1 		"$colorGreens"
+		resultVar 		"$colorGreens"
+	}
+
+	Divide
+	{
+		srcVar1 		"$colorReds"
+		srcVar2 		"$ten"
+		resultVar 		"$color[0]"
+	}
+
+	Divide
+	{
+		srcVar1 		"$colorGreens"
+		srcVar2 		"$ten"
+		resultVar 		"$color[1]"
+	}
+
+	Divide
+	{
+		srcVar1 		"$colorBlues"
+		srcVar2 		"$ten"
+		resultVar 		"$color[2]"
+	}
+
+	IT
+	{
+		resultVar		"$boomerAmount"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$detailblendfactor"
+		greaterVar 	"$boomerAmount"
+		srcVar1 		"$boomerEffects"
+		srcVar2 		"$zero" 
+		resultVar 		"$detailblendfactor"
+	}
+
+	BloodyHands
+	{
+		resultVar		"$bloodAmount"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$detailblendfactor"
+		greaterVar 	"$bloodAmount"
+		srcVar1 		"$meleeBloodEffects"
+		srcVar2 		"$zero" 
+		resultVar 		"$detailblendfactor"
+	}
+
+}
+
+}

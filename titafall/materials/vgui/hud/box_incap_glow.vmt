@@ -1,0 +1,22 @@
+UnlitGeneric
+{
+$baseTexture "vgui\hud\box_incap_glow"
+$translucent 1
+$alpha 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+$vertexcolor 1
+
+Proxies
+{
+	Sine
+	{
+		sineperiod 1
+		sinemin 0.2
+		sinemax 0.5
+		resultVar "$alpha"
+	}
+}
+
+}

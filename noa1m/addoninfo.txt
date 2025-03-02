@@ -1,0 +1,6 @@
+"Addoninfo"
+{
+	addontitle "Alternate noa1mbot Background for Transition"
+	addonversion "1.0.2"
+	addondescription "Special version of the HUD from the noa1mbot's speedruns."
+}

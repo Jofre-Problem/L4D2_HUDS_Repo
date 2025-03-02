@@ -1,0 +1,49 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "vgui\HUD\damage_alpha"
+	"$texture2" "vgui\HUD\damage_overlay_redbloom_col"
+	"$rotatespeed" 0
+	// "$rotatespeed" .25
+	"$translucent" 1
+//	"$alphatest"			1
+//  "$vertexalpha" "1"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$alpha" "0.1"
+	$dofEnable 0
+
+	"$surfaceprop" "default"
+
+	"Proxies"
+	{
+
+
+	//Start of freehand input from reVaMpT//
+
+//	"$detailscale" "8"
+
+		"Sine"
+		{
+			"sineMin" 0.1
+			"sineMax" 0.2
+			"sinePeriod" 3
+			"initialValue"	"0.1"
+			"resultVar" "$alpha"
+		}
+
+		"Sine"
+		{
+			"sineMin" 0
+			"sineMax" 0
+			"sinePeriod" 0
+			"resultVar" "$rotatespeed"
+		}
+
+				"TextureTransform"
+		{
+			"rotateVar" "$rotatespeed"
+			// "resultvar" "$basetexturetransform"
+			"resultvar" "$basetexturetransform"
+		}
+	}
+}

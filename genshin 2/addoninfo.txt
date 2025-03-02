@@ -1,0 +1,8 @@
+"AddonInfo"
+{
+     addonSteamAppID         550
+     addontitle              "【GenshinHUD】"
+     addonversion            "2.1"
+     addonauthor             "Yarou"
+     addonDescription        "Inspired by 20Cat's version."
+}

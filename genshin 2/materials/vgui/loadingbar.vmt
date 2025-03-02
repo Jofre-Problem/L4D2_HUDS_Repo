@@ -1,0 +1,18 @@
+UnlitGeneric
+{
+$basetexture "vgui\borrowed\ui_loadingprogress\loadingbar"
+$translucent 1
+$offset 0
+
+Proxies
+	{
+		Sine
+		{
+		"sineperiod"	"0.75"
+		"sinemin"		"0.25"
+		"sinemax"		"1"
+		"timeoffset"	"$offset"
+		"resultVar"	"$alpha"
+		}
+	}
+}

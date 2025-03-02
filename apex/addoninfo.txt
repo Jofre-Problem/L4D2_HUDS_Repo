@@ -1,0 +1,15 @@
+"AddonInfo"
+{
+    addonSteamAppID      550
+    addontitle           "Apex Legends Hud"
+    addonversion    	 1.1
+    addontagline    	 "Apex Legends Hud"
+    addonauthor      	 "MeFoxly"
+    addonauthorSteamID   "MeFoxly"
+    addonSteamGroupName  ""
+    addonURL0 ""
+
+     addonDescription "Apex Legends Hud. Compatiable with all models as far as i know. Own Incap Texture. Teamate incap Names fixed. First ever mod and Hud i've made, message for any bugs. Not tested on Versus only Co op."
+
+     addonContent_Campaign  0
+}

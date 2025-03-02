@@ -1,0 +1,201 @@
+UnlitGeneric
+{
+
+	$basetexture 		"vgui/sys/sysrng"
+	
+	$translucent		"1"
+
+	$frame			"1"
+
+	$masterToggle		"0.0"
+	$masterToggleSave		"0.0"
+	$masterToggleCheck	"0.0"
+
+	$r			"0.0"
+	$rInv			"0.0"
+	$rOffset			"0.0"
+
+	$timeSinceChange		"0.0"
+	
+	$mo			"-1"
+	$ptf			".25"
+	$zero			"0.0"
+	$pf			"0.5"
+	$one			"1.0"
+	$two			"2.0"
+	$four			"4.0"
+
+	$alpha			"0.0"
+	$addFactor		".25"
+	$scaleFactor		"1"
+	$scale			"0.0"
+
+	$vprofActive		"0"
+	$budgetActive		"0"
+
+	$warning			"0"
+
+
+Proxies
+{
+
+	ConVar			
+	{
+		convar		"cl_buy_favorite_quiet"
+		resultVar		"$masterToggle"
+	}
+
+	ConVar			
+	{
+		convar		"showbudget_texture"
+		resultVar		"$budgetActive"
+	}
+
+
+	ConVar			
+	{
+		convar		"vprof_graph"
+		resultVar		"$vprofActive"
+	}
+
+	Add
+	{
+		srcVar1		"$budgetActive"
+		srcVar2 		"$vprofActive"
+		resultVar 		"$warning"
+	}
+
+	Multiply
+	{
+		srcVar1		"$warning"
+		srcVar2 		"$masterToggle"
+		resultVar 		"$warning"
+	}
+
+	Int
+	{
+		srcVar1 		"$masterToggle"
+		resultVar 		"$masterToggle"    
+	}
+
+	Subtract
+	{
+		srcVar1 		"$masterToggle"
+		srcVar2 		"$masterToggleSave"
+		resultVar 		"$masterToggleCheck"   
+	}
+
+	Abs
+	{
+		srcVar1 		"$masterToggleCheck"
+		resultVar 		"$masterToggleCheck"    
+	}
+
+	LinearRamp		
+	{					
+		rate 		"$one"
+		resultVar 		"$r"
+	}
+
+	Multiply
+	{
+		srcVar1		"$mo"
+		srcVar2 		"$r"
+		resultVar 		"$rInv"
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$rOffset"
+          		greaterVar 	"$rInv"
+          	 	srcVar1 		"$masterToggleCheck"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$rOffset"    
+       	}
+	
+	Add
+      	{
+		srcVar1		"$r"
+		srcVar2 		"$rOffset"
+		resultVar 		"$timeSinceChange"
+       	}
+	
+	Subtract
+	{
+		srcVar1		"$one"
+		srcVar2 		"$timeSinceChange"
+		resultVar 		"$alpha"
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$zero"
+          		greaterVar 	"$alpha"
+          	 	srcVar1 		"$alpha"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$alpha"    
+       	}
+	
+	Equals
+	{
+		srcVar1 		"$masterToggle"
+		resultVar 		"$masterToggleSave"    
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$ptf"
+          		greaterVar 	"$four"
+          	 	srcVar1 		"$warning"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$addFactor"
+       	}
+
+	Add
+	{
+		srcVar1		"$timeSinceChange"
+		srcVar2 		"$addFactor"
+		resultVar 		"$scale"
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$one"
+          		greaterVar 	"$ptf"
+          	 	srcVar1 		"$warning"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$scaleFactor"    
+       	}
+
+	Multiply
+	{
+		srcVar1		"$scale"
+		srcVar2 		"$scaleFactor"
+		resultVar 		"$scale"
+	}
+
+	TextureTransform
+	{
+		centerVar		"$pf"
+		scaleVar		"$scale"
+		rotateVar		"$zero"
+		translateVar	"$zero"
+		resultVar		"$basetexturetransform"
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$masterToggle"
+          		greaterVar 	"$two"
+          	 	srcVar1 		"$warning"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$frame"    
+       	}
+
+
+
+
+}
+
+
+}

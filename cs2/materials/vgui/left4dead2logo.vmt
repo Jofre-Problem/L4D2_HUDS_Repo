@@ -1,0 +1,5 @@
+UnlitGeneric
+{
+$basetexture "vgui/Left4Dead2Logo"
+$alpha 0
+}

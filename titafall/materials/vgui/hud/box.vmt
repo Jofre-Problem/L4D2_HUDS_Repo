@@ -1,0 +1,11 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui\hud\box"
+	"$translucent" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$no_fullbright" 1
+	"$ignorez" 1
+	$color "[0 0 0 127]"
+	"$alpha" 0.5
+}

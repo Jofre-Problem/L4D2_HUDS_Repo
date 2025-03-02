@@ -1,0 +1,173 @@
+"Resource/UI/GenericConfirmation.res"
+{
+	"GenericConfirmation"
+	{
+		"ControlName"		"Frame"
+		"fieldName"			"GenericConfirmation"
+		"xpos"				"0"
+		"ypos"				"0"
+		"wide"				"f0"
+		"tall"				"f0"
+		"autoResize"		"0"
+		"pinCorner"			"0"
+		"visible"			"1"
+		"enabled"			"1"
+		"tabPosition"		"0"
+		"title_xpos"		"10000"
+	}
+
+	"ImgBackground"
+	{
+		"ControlName"			"L4DMenuBackground"
+		"fieldName"				"ImgBackground"
+		"xpos"				"0"
+		"ypos"				"0"
+		"zpos"				"-1"
+		"wide"				"f0"
+		"tall"				"f0"
+		"autoResize"			"0"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"fillColor"				"20Cat_MainMenu_Background"
+	}
+
+	"LblMessage" // 内容
+	{
+		"ControlName"			"Label"
+		"fieldName"				"LblMessage"
+		"xpos"					"0"
+		"ypos"					"c-165"
+		"tall"					"150"
+		"wide"					"f0"
+		"autoResize"			"1"
+		"textAlignment"			"center"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"Font"					"DefaultLarge"
+		"bgcolor_override" 		"0 0 0 220"
+		"wrap"					"0"
+	}
+	
+   "IconForwardArrow" // 确认
+	{
+		"ControlName"			"ImagePanel"
+		"fieldName"				"IconForwardArrow"
+		"xpos"				"0"
+		"ypos"				"c15"
+		"wide"				"f0"
+		"tall"				"44"
+		"scaleImage"			"1"
+		"pinCorner"				"0"
+		"visible"				"0"
+		"enabled"				"0"
+		"tabPosition"			"0"
+		"image"		"../vgui/borrowed/ui_genericconfirmation/confirm"
+		"scaleImage"			"1"
+	}
+	
+	"BtnOK"
+	{
+		"ControlName"			"L4D360HybridButton"
+		"fieldName"				"BtnOK"
+		"xpos"					"0"
+		"ypos"					"c15"
+		"zpos"					"51"
+		"wide"					"f0"
+		"tall"					"44"
+		"autoResize"			"0"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"labelText"				""
+		"style"					"MainMenuButton"
+		"textAlignment"			"center"
+		"command"				"OK"
+		"navUp"					"BtnCancel"
+		"navDown"				"BtnCancel"
+	}
+
+    "IconBackArrow" // 取消
+	{
+		"ControlName"			"ImagePanel"
+		"fieldName"				"IconBackArrow"
+		"xpos"				"0"
+		"ypos"				"c74"
+		"wide"				"f0"
+		"tall"				"44"
+		"scaleImage"			"1"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"image"					"../vgui/borrowed/ui_genericconfirmation/cancel"
+		"scaleImage"			"1"
+	}
+
+	"BtnCancel"
+	{
+		"ControlName"			"L4D360HybridButton"
+		"fieldName"				"BtnCancel"
+		"xpos"				"0"
+		"ypos"				"c74"
+		"zpos"				"51"
+		"wide"				"f0"
+		"tall"				"44"
+		"autoResize"			"0"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"wrap"					"1"
+		"AllCaps"				"1"
+		"labelText"				""
+		"style"					"MainMenuButton"
+		"textAlignment"			"center"
+		"command"				"cancel"
+		"navUp"					"BtnOK"
+		"navDown"				"BtnOK"
+
+	}
+
+
+	"CheckButton"
+	{
+		"ControlName"		"CvarToggleCheckButton_GameUI"
+		"fieldName"		"CheckButton"
+		"xpos"		"95"
+		"ypos"		"210"
+		"zpos"					"3"
+		"wide"		"100"
+		"tall"		"24"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"0"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"labelText"		""
+		"textAlignment"		"west"
+		"dulltext"		"0"
+		"brighttext"		"0"
+		"Default"		"0"
+	}
+
+	"LblCheckButton"
+	{
+		"ControlName"			"Label"
+		"fieldName"				"LblCheckButton"
+		"xpos"					"115"
+		"ypos"					"210"
+		"tall"					"24"
+		"wide"					"f-195"
+		"autoResize"			"1"
+		"textAlignment"			"center-west"
+		"pinCorner"				"0"
+		"visible"				"0"
+		"enabled"				"1"
+		"tabPosition"			"0"
+	}
+}

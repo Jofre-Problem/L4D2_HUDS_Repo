@@ -1,0 +1,1486 @@
+"VertexLitGeneric"
+{
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      ___ ___  _      ___   __  ____     _       _ __   __  __  __        ___ _  _ ___ __  _ 
+//    / __|   __| |  |    |   __|/ __|  _   _|    \ \   / / _ \  |   |  |   |   _ \    / __|   |/ /_  _| |  \ | |
+//    \__ \   _|  |  |__|   _|     (__   |  |         \ V /  (_)   |   |_|   |      /    \__ \ ' <    |  |   | . `  |
+//    |___/___|  |___|___\ ___|   |_|           |_| \___/ \_ __/|_| _\    |___/_|\_\__|  |_|\_|
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  ++++++++++   ENTITY VERSION (Survivors/Guns/Items/Infected) - COLOR RNG ++++++++++ 
+//
+//  By Ellie, ask your questions here : https://steamcommunity.com/id/ellie_williams/
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$color				"[1 1 1]"
+	$blendtintbybasealpha 		"1"	
+
+// ---------------------------------------------- USER VARIABLES	// All these variables are just defaulted, the code will use the user set values
+
+	$slotUsed			"0"		// The user can change this variable to set the slot that will be used	
+	$slotUsedFrame		"0"		// The user can change this variable to set the slot that will be used for $frame
+	
+	$oneSkinPerMap		"0"		// The user can change this variable to only allow one skin per map
+
+	$VMTColorOffset		"0"		// The user can change this to change what clothes randomize together or not
+	$DVFColorOffset		"0"		// The user can change this to change how color ranges in the SYS
+
+	$activateEXTR		"0"		// The user can activate this thing to also randomize the $basetexture frame albedo (RNG)
+
+	$activateColorRNG		"1"
+	$originalColor		"[1 1 1]"	
+
+	$proxThreshold		"500"	
+	$toleranceThreshold	"10"	
+
+	 $boomerEffects		"0"		// The user can change this variable and unquote what's below to activate Boomer vomit effects
+	 // $detail 		"models/survivors/survivor_it"
+	 // $detailscale 		3
+	 // $detailblendfactor 	".001" 
+	 // $detailblendmode 	"0"
+
+	$meleeBloodEffects		"0"		// The user can change this variable and unquote what's below to activate Blood on melee weapons
+	// $detail 			"models/infected/hunter/hunter_01_detail"
+	// $detailscale 		"1.75"
+	// $detailblendfactor 	.001 
+	// $detailblendmode 	"0"
+
+// ---------------------------------------------- RNG
+
+	$checkMax		"0.0"
+	$maxFrame		"0.0"
+	$maxFramePlusOne		"1.0"
+	$countingFinished		"0.0"
+
+	$randEXTR		"0.0"
+	$randEXTRStored		"0.0"
+	$randEXTRInject		"0.0"
+	$randEXTROverflow	"0.0"
+	$injectEXTR		"0.0"
+	$RNGframeEXTR		"0.0"
+	
+	$rerollRaw		"0"
+	$rerollRawStored		"0"
+	$rerollRNG		"0"
+
+	$randSYS		"0.0"
+	$randSYSTemp		"0.0"
+	$randSYSOverflow		"0.0"
+
+	$ramp			"0"
+		
+	$prepareStore		"1000.0"
+	$randSYSStored		"1000.0"
+	$randSYSInject		"0.0"
+
+	$roundOffset		"0.05"
+	$randOffset		"1000.0"
+	$randOffsetDIV		"100.0"
+
+	$injectColor		"0.0"
+	$RNGInjectColor		"0.0"
+
+	$colorReds		"0.0"
+	$colorGreens		"0.0"
+	$colorBlues		"0.0"
+
+	$isEntity			"0"
+	$time			"0"
+
+	$prox			"0"
+	$proxCheck		"0"
+	$triggerPureRNG		"0"
+
+// ---------------------------------------------- SYS
+
+	$masterToggle		"1"
+	$blockRawData		"0.0"
+
+	$tempDIV			"0.0"
+	$tempMULT		"0.0"
+	$tempFRAC		"0.0"
+	$tempOFFSET		"0.0"
+	$SYSInjectColor		"0.0"
+	$SYSInjectFrame		"0.0"
+
+// ---------------------------------------------- Injector
+
+	$CHOSENinjectColor	"0"
+	$CHOSENinjectFrame	"0"
+
+	$forceSYS		"0"
+	$keepColorCheck		"0"
+
+// ---------------------------------------------- Special Stuff
+
+	$boomerAmount		"0.0"
+	$bloodAmount		"0.0"
+
+// ---------------------------------------------- Slots & Numbers
+
+	$slot1			"0.0"
+	$slot2			"0.0"
+	$slot3			"0.0"
+	$slot4			"0.0"
+	$slot5			"0.0"
+	$slot6			"0.0"
+	$slot7			"0.0"
+	$slot8			"0.0"
+	$slot9			"0.0"
+	$slot10			"0.0"
+	$slot11			"0.0"
+	$slot12			"0.0"
+	$slot13			"0.0"
+	$slot14			"0.0"
+	$slot15			"0.0"
+	$slot16			"0.0"
+	$slot17			"0.0"
+	$slot18			"0.0"
+	$slot19			"0.0"
+	$slot20			"0.0"
+	$slot21			"0.0"
+	$slot22			"0.0"
+	$slot23			"0.0"
+	$slot24			"0.0"
+	$slot25			"0.0"
+	$slot26			"0.0"
+	$slot27			"0.0"
+	$slot28			"0.0"
+	$slot29			"0.0"
+	$slot30			"0.0"
+
+
+	$mo			"-1"
+	$zero			"0.0"
+	$one			"1.0"
+	$two			"2.0"
+	$three			"3"
+	$four			"4"
+	$five			"5"
+	$six			"6"
+	$seven			"7"
+	$eight			"8"
+	$nine			"9"
+	$ten			"10"
+	$eleven			"11"
+	$twelve			"12"
+	$thirteen			"13"
+	$fourteen			"14"
+	$fifteen			"15"
+	$sixteen			"16"
+	$seventeen		"17"
+	$eighteen			"18"
+	$nineteen			"19"
+	$twenty			"20"
+	$twentyone		"21"
+	$twentytwo		"22"
+	$twentythree		"23"
+	$twentyfour		"24"
+	$twentyfive		"25"
+	$twentysix		"26"
+	$twentyseven		"27"
+	$twentyeight		"28"
+	$twentynine		"29"
+	$oh			"100"
+	$tff			"255"
+	$fh			"500"
+	$nnn			"999"
+	$ot			"1000"
+
+	
+
+Proxies
+{
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 0 : BaseTexture RNG Extra (EXTR)
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get RNG Number (Entity Random)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	// This scrolls fast through all the possible frames and stores the result in $checkMax
+
+	AnimatedTexture				
+	{
+		animatedtexturevar 			"$basetexture" 
+		animatedtextureframenumvar		"$checkMax"	
+		animatedtextureframerate		"25"
+	}
+
+	// This stores $checkMax in $maxFrame only if $checkMax is bigger than $maxFrame
+	// As a result, $maxFrame will be equal to the highest frame of the VTF
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$maxFrame"
+		greaterVar 	"$checkMax"
+		srcVar1 		"$checkMax"
+		srcVar2 		"$maxFrame"
+		resultVar 		"$maxFrame"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$one"
+		greaterVar 	"$countingFinished"
+		srcVar1 		"$checkMax"
+		srcVar2 		"$zero"
+		resultVar 		"$countingFinished"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$zero"
+		greaterVar 	"$countingFinished"
+		srcVar1 		"$maxFrame"
+		srcVar2 		"$zero"
+		resultVar 		"$countingFinished"    
+	}
+
+	// When $checkMax is not higher than $maxFrame, it means the AnimatedTexture proxy returned to 0
+	// This means the code finished counting what the max $frame is. Therefore, we can now inject the result.
+
+	Add		
+	{
+		srcVar1 		"$maxFrame"
+		srcVar2 		"$one"
+		resultVar 		"$maxFramePlusOne"
+	}
+
+	Divide	
+	{
+		srcVar1 		"$randOffset"
+		srcVar2 		"$ten"
+		resultVar 		"$randOffsetDIV"
+	}
+
+	Divide
+	{
+		srcVar1 		"$randOffsetDIV"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$tempDIV"    
+	}
+
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$tempDIV"    
+	}
+
+	Add
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$roundOffset"
+		resultVar 		"$randOffsetDIV"    
+	}
+
+	EntityRandom
+	{
+          	 	scale		"$maxFramePlusOne"         
+          	 	resultVar 		"$randEXTR"  
+	}
+
+	Add
+	{
+		srcVar1 		"$randEXTR"
+		srcVar2 		"$randOffsetDIV"
+		resultVar 		"$randEXTR"    
+	}
+
+	Subtract
+	{
+		srcVar1 		"$randEXTR"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$randEXTROverflow"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTR"
+		greaterVar 	"$randEXTROverflow"
+		srcVar1 		"$randEXTR"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$randEXTR"    
+	}
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get unique frame for "One RNG per map" (True RNG)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	// When the counting is finished, the code injects the ''final'' $randSYS in $prepareStore
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$prepareStore"
+		greaterVar 	"$randEXTR"
+		srcVar1 		"$countingFinished"
+		srcVar2 		"$zero"
+		resultVar 		"$prepareStore"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTRStored"
+		greaterVar 	"$prepareStore"
+		srcVar1 		"$randEXTRStored"
+		srcVar2 		"$fh"
+		resultVar 		"$randEXTRStored"    
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get unique frame for "One RNG per map" (True RNG)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTR"
+		greaterVar 	"$randEXTRStored"
+		srcVar1 		"$oneSkinPerMap"
+		srcVar2 		"$zero"
+		resultVar 		"$randEXTRInject"    
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Injector for BaseTexture
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Multiply			
+	{
+		srcVar1 		"$countingFinished"
+		srcVar2 		"$randEXTRInject"
+		resultVar 		"$injectEXTR"    
+	}
+
+// ------------------------------------------------------------------------------ Pure RNG Block
+
+	CurrentTime
+	{
+		resultVar		"$time"
+	}
+
+	EntityRandom
+	{
+          	 	scale		"1"         
+          	 	resultVar 		"$isEntity"  
+	}
+
+	PlayerProximity
+	{
+		scale		"1"
+		resultVar 		"$prox"    
+	}
+
+	Subtract
+	{
+		srcVar1 		"$prox"
+		srcVar2 		"$proxThreshold"
+		resultVar 		"$proxCheck"    
+	}
+
+	Abs		
+	{
+		srcVar1 		"$proxCheck"
+		resultVar 		"$proxCheck"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$one"
+		greaterVar 	"$zero"
+		srcVar1 		"$proxCheck"
+		srcVar2 		"$toleranceThreshold"
+		resultVar 		"$triggerPureRNG"
+	}
+
+	Add		
+	{
+		srcVar1 		"$triggerPureRNG"
+		srcVar2 		"$rerollRNG"
+		resultVar 		"$triggerPureRNG"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$zero"
+		greaterVar 	"$isEntity"
+		srcVar1 		"$triggerPureRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$isEntity"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$one"
+		greaterVar 	"$isEntity"
+		srcVar1 		"$time"
+		srcVar2 		"$twentyfour"
+		resultVar 		"$isEntity"
+	}
+
+// ------------------------------------------------------------------------------ Pure RNG Block
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$RNGframeEXTR"
+		greaterVar 	"$injectEXTR"
+		srcVar1 		"$isEntity"
+		srcVar2 		"$zero"
+		resultVar 		"$injectEXTR"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$injectEXTR"
+		srcVar2 		"$activateEXTR"
+		resultVar 		"$RNGframeEXTR"    
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 1 : COLOR RNG PREPARE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get RNG Number (Entity Random)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// ------------------------------------------------------------------------------ Reroll RNG Small Block START
+
+	ConVar			
+	{
+		convar		"cl_buy_favorite_nowarn"
+		resultVar		"$rerollRaw"
+	}
+
+	Int
+	{
+		srcVar1 		"$rerollRaw"
+		resultVar 		"$rerollRaw"    
+	}
+
+	Subtract
+	{
+		srcVar1 		"$rerollRaw"
+		srcVar2 		"$rerollRawStored"
+		resultVar 		"$rerollRNG"    
+	}
+
+	Abs
+	{
+		srcVar1		"$rerollRNG"
+		resultVar		"$rerollRNG"	
+	}
+
+	Equals
+	{
+		srcVar1 		"$rerollRaw"
+		resultVar 		"$rerollRawStored"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randOffset"
+		greaterVar 	"$ot"
+		srcVar1 		"$rerollRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$randOffset"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYSStored"
+		greaterVar 	"$zero"
+		srcVar1 		"$rerollRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSStored"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randEXTRStored"
+		greaterVar 	"$ot"
+		srcVar1 		"$rerollRNG"
+		srcVar2 		"$zero"
+		resultVar 		"$randEXTRStored"    
+	}
+
+
+
+// ------------------------------------------------------------------------------ Reroll RNG Small Block END
+
+	LinearRamp
+	{
+          	 	rate		"10"         
+          	 	resultVar 		"$ramp"  
+	}
+
+	Int		
+	{
+		srcVar1 		"$ramp"
+		resultVar 		"$ramp"    
+	}
+
+	Divide
+	{
+		srcVar1 		"$ramp"
+		srcVar2 		"$ot"
+		resultVar 		"$tempDIV"    
+	}
+
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$ot"
+		resultVar 		"$tempDIV"    
+	}
+
+	Add
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$roundOffset"
+		resultVar 		"$tempDIV"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randOffset"
+		greaterVar 	"$tempDIV"
+		srcVar1 		"$randOffset"
+		srcVar2 		"$nnn"
+		resultVar 		"$randOffset"    
+	}
+
+	EntityRandom
+	{
+          	 	scale		"999"         
+          	 	resultVar 		"$randSYSTemp"  
+	}
+
+	Add
+	{
+		srcVar1		"$randSYSTemp"
+		srcVar2 		"$randOffset"
+		resultVar		"$randSYSTemp"	
+	}
+
+	Subtract
+	{
+		srcVar1		"$randSYSTemp"
+		srcVar2 		"$ot"
+		resultVar		"$randSYSOverflow"	
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYSTemp"
+		greaterVar 	"$randSYSOverflow"
+		srcVar1 		"$randSYSTemp"
+		srcVar2 		"$ot"
+		resultVar 		"$randSYS"    
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get unique color for "One RNG per map" (True RNG)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYS"
+		greaterVar 	"$randSYSStored"
+		srcVar1 		"$randSYSStored"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSStored"    
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get unique color for "One RNG per map" (True RNG)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+	// This determines the final number if RNG is used and not SYS. It stores it into $randSYSInject
+	// The code picks $randSYSStored if the user chose one skin per map, and otherwise $randSYS
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$randSYS"
+		greaterVar 	"$randSYSStored"
+		srcVar1 		"$oneSkinPerMap"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSInject"    
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Determine the final RNG number
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	// If the model is a carried entity ($randSYSInject == 0), do not inject but keep the old $RNGinjectFrame
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$RNGinjectColor"
+		greaterVar 	"$randSYSInject"
+		srcVar1 		"$randSYS"
+		srcVar2 		"$zero"
+		resultVar 		"$randSYSInject"    
+	}
+
+	Add
+	{
+		srcVar1 		"$randSYSInject"
+		srcVar2 		"$VMTColorOffset"
+		resultVar 		"$randSYSInject"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$RNGinjectColor"
+		greaterVar 	"$randSYSInject"
+		srcVar1 		"$isEntity"
+		srcVar2 		"$zero"
+		resultVar 		"$RNGinjectColor"
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 2 : DATA RETRIEVE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Retrive slots
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	// The data about what skin is in use is stored in the Joystick Controls
+	// This disables the use of a controller for L4D2 (but who uses a Controller for a FPS anyway)
+	// This was because the controllers variables are plentyful and not that essential, while still...
+	// ... being not reset when the game restarts. Declaring custom variables is not possible since
+	// "The Last Stand" update, therefore, this was the only option for this stuff to work.
+
+	// This retrieves the master toggle (On/Off) value, that is stored in cl_buy_favorite_quiet
+
+	ConVar			
+	{
+		convar		"cl_buy_favorite_quiet"
+		resultVar		"$masterToggle"
+	}
+
+	Int
+	{
+		srcVar1 		"$masterToggle"
+		resultVar 		"$masterToggle"    
+	}
+
+	// This retrieves the other values for the skins, that are stored in the Joystick parameters
+
+	ConVar			
+	{
+		convar		"budget_background_alpha"
+		resultVar		"$slot1"
+	}
+
+	ConVar			
+	{
+		convar		"budget_bargraph_background_alpha"
+		resultVar		"$slot2"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_height"
+		resultVar		"$slot3"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_width"
+		resultVar		"$slot4"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_x"
+		resultVar		"$slot5"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_y"
+		resultVar		"$slot6"
+	}
+
+	ConVar			
+	{
+		convar		"budget_show_history"
+		resultVar		"$slot7"
+	}
+
+	ConVar			
+	{
+		convar		"budget_show_peaks"
+		resultVar		"$slot8"
+	}
+
+	ConVar			
+	{
+		convar		"hud_classautokill"
+		resultVar		"$slot9"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphheight"
+		resultVar		"$slot10"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphpos"
+		resultVar		"$slot11"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphproportionalfont"
+		resultVar		"$slot12"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphshowinterp"
+		resultVar		"$slot13"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphshowlatency"
+		resultVar		"$slot14"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphsolid"
+		resultVar		"$slot15"
+	}
+
+	ConVar			
+	{
+		convar		"net_graphtext"
+		resultVar		"$slot16"
+	}
+
+	ConVar			
+	{
+		convar		"npc_height_adjust"
+		resultVar		"$slot17"
+	}
+
+	ConVar			
+	{
+		convar		"overview_alpha"
+		resultVar		"$slot18"
+	}
+
+	ConVar			
+	{
+		convar		"overview_health"
+		resultVar		"$slot19"
+	}
+
+	ConVar			
+	{
+		convar		"overview_locked"
+		resultVar		"$slot20"
+	}
+
+	ConVar			
+	{
+		convar		"overview_names"
+		resultVar		"$slot21"
+	}
+
+	ConVar			
+	{
+		convar		"overview_tracks"
+		resultVar		"$slot22"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_background_alpha"
+		resultVar		"$slot23"
+	}
+
+	ConVar			
+	{
+		convar		"vprof_verbose"
+		resultVar		"$slot24"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_height"
+		resultVar		"$slot25"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_width"
+		resultVar		"$slot26"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_x"
+		resultVar		"$slot27"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_y"
+		resultVar		"$slot28"
+	}
+
+	ConVar			
+	{
+		convar		"vprof_graphwidth"
+		resultVar		"$slot29"
+	}
+
+	ConVar			
+	{
+		convar		"vprof_graphheight"
+		resultVar		"$slot30"
+	}
+
+	Abs
+	{
+		srcVar1 		"$slot29"
+		resultVar 		"$slot29"    
+	}
+
+	Abs
+	{
+		srcVar1 		"$slot30"
+		resultVar 		"$slot30"    
+	}
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Retrive slots
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	// This is where the code retrieves the correct data from the slots depending on the slot
+	// that the modder chose ($slotUsed). Sadly, a for loop is impossible in Proxies, so all the
+	// possibilities have to be manually checked with basic if-else conditions...
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$zero"
+		greaterVar 	"$slot1"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$zero"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot2"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$one"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot3"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$two"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot4"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$three"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot5"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$four"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot6"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$five"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot7"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$six"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot8"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$seven"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot9"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$eight"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot10"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$nine"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot11"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$ten"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot12"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$eleven"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot13"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twelve"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot14"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$thirteen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot15"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$fourteen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot16"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$fifteen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot17"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$sixteen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot18"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$seventeen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot19"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$eighteen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot20"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$nineteen"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot21"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twenty"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot22"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentyone"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot23"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentytwo"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot24"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentythree"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot25"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentyfour"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot26"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentyfive"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot27"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentysix"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot28"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentyseven"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot29"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentyeight"
+		resultVar 		"$blockRawData"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$blockRawData"
+		greaterVar 	"$slot30"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$twentynine"
+		resultVar 		"$blockRawData"    	// At this point, $blockRawData contains the raw data from the correct slot
+	}						// The value is a number from 0 to 1,000,000,000 that the user can increment
+							// one by one. What's left to do is to convert this value in a frame to be used
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Retrive skin lock
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Frac
+	{
+		srcVar1 		"$blockRawData"
+		resultVar 		"$tempFRAC"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempFRAC"
+		srcVar2 		"$oh"
+		resultVar 		"$tempMULT"    
+	}
+
+	Int
+	{
+		srcVar1 		"$tempMULT"
+		resultVar 		"$tempMULT"    
+	}
+
+	Divide
+	{
+		srcVar1 		"$tempMULT"
+		srcVar2 		"$two"
+		resultVar 		"$tempDIV"    
+	}
+	
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$two"
+		resultVar 		"$forceSYS"    
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 3 : SYS SKIN
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// For Color RNG, it is possible to directly inject the RawData from 0 to 1,000,000,000. The code will later convert that to a color.
+
+	Equals
+	{
+		srcVar1 		"$blockRawData"
+		resultVar 		"$SYSInjectColor"		// GLOBAL FINAL RESULT SENT TO THE SWITCHER
+	}
+
+	Divide
+	{
+		srcVar1 		"$blockRawData"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$tempDIV"    
+	}
+
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$maxFramePlusOne"
+		resultVar 		"$tempMULT"    
+	}
+
+	Add
+	{
+		srcVar1 		"$tempMULT"	
+		srcVar2 		"$zero"			// ?????
+		resultVar 		"$SYSInjectFrame"		// GLOBAL FINAL RESULT SENT TO THE SWITCHER
+	}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 4 : INJECTOR
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// This part takes the last 3 digits of the $CHOSENinjectColor. 
+	// The last digit (divided by then) is for reds, the second to last for blues, and the third to last for greens
+	// This means there is 999 possible colors, from 0 0 0 to 9 9 9, in that order.
+
+
+// -- COLOR
+
+	LessOrEqual		
+	{
+		LessEqualVar 	"$RNGinjectColor"
+		greaterVar 	"$SYSinjectColor"
+		srcVar1 		"$masterToggle"
+		srcVar2 		"$zero"
+		resultVar 		"$CHOSENinjectColor"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$RNGinjectColor"
+		greaterVar 	"$CHOSENinjectColor"
+		srcVar1 		"$slotUsed"
+		srcVar2 		"$zero"
+		resultVar 		"$CHOSENinjectColor"
+	}
+
+	LessOrEqual		// Forces SYS if slot has been locked by user
+	{
+		LessEqualVar 	"$CHOSENinjectColor"	// Warning : Inverted
+		greaterVar 	"$SYSinjectColor"		// Warning : Inverted
+		srcVar1 		"$forceSYS"
+		srcVar2 		"$zero"
+		resultVar 		"$CHOSENinjectColor"
+	}
+
+// -- FRAME
+
+	LessOrEqual		
+	{
+		LessEqualVar 	"$RNGframeEXTR"
+		greaterVar 	"$SYSinjectFrame"
+		srcVar1 		"$masterToggle"
+		srcVar2 		"$zero"
+		resultVar 		"$CHOSENinjectFrame"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$RNGframeEXTR"
+		greaterVar 	"$CHOSENinjectFrame"
+		srcVar1 		"$slotUsedFrame"
+		srcVar2 		"$zero"
+		resultVar 		"$CHOSENinjectFrame"
+	}
+
+	LessOrEqual		// Forces SYS if slot has been locked by user
+	{
+		LessEqualVar 	"$CHOSENinjectFrame"	// Warning : Inverted
+		greaterVar 	"$SYSinjectFrame"		// Warning : Inverted
+		srcVar1 		"$forceSYS"
+		srcVar2 		"$zero"
+		resultVar 		"$CHOSENinjectFrame"	
+	}
+
+	Equals
+	{
+		srcVar1 		"$CHOSENinjectFrame"
+		resultVar 		"$frame"			// $frame injection here
+	}
+
+	LessOrEqual		// Safety to Force $frame to always be among possible values
+	{
+		LessEqualVar 	"$frame"
+		greaterVar 	"$maxframe"
+		srcVar1 		"$frame"
+		srcVar2 		"$maxframe"
+		resultVar 		"$frame"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$DVFColorOffset"
+		resultVar 		"$CHOSENinjectColor"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$ten"
+		resultVar 		"$colorReds"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$oh"
+		resultVar 		"$colorGreens"
+	}
+
+	Divide
+	{
+		srcVar1 		"$CHOSENinjectColor"
+		srcVar2 		"$ot"
+		resultVar 		"$colorBlues"
+	}
+
+	Frac
+	{
+		srcVar1 		"$colorReds"
+		resultVar 		"$colorReds"
+	}
+
+	Frac
+	{
+		srcVar1 		"$colorBlues"
+		resultVar 		"$colorBlues"
+	}
+
+	Frac
+	{
+		srcVar1 		"$colorGreens"
+		resultVar 		"$colorGreens"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$colorReds"
+		srcVar2 		"$ten"
+		resultVar 		"$colorReds"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$colorGreens"
+		srcVar2 		"$ten"
+		resultVar 		"$colorGreens"
+	}
+
+	Multiply
+	{
+		srcVar1 		"$colorBlues"
+		srcVar2 		"$ten"
+		resultVar 		"$colorBlues"
+	}
+
+	Int
+	{
+		srcVar1 		"$colorReds"
+		resultVar 		"$colorReds"
+	}
+
+	Int
+	{
+		srcVar1 		"$colorBlues"
+		resultVar 		"$colorBlues"
+	}
+
+	Int
+	{
+		srcVar1 		"$colorGreens"
+		resultVar 		"$colorGreens"
+	}
+
+	Divide						// Color injection here
+	{
+		srcVar1 		"$colorReds"
+		srcVar2 		"$ten"
+		resultVar 		"$color[0]"
+	}
+
+	Divide
+	{
+		srcVar1 		"$colorGreens"
+		srcVar2 		"$ten"
+		resultVar 		"$color[1]"
+	}
+
+	Divide
+	{
+		srcVar1 		"$colorBlues"
+		srcVar2 		"$ten"
+		resultVar 		"$color[2]"
+	}
+
+	// --- Force OG Color if Color RNG Deactivated
+
+	Add
+	{
+		srcVar1 		"$activateColorRNG"
+		srcVar2 		"$masterToggle"
+		resultVar 		"$keepColorCheck"
+	}
+
+	Add
+	{
+		srcVar1 		"$forceSYS"
+		srcVar2 		"$keepColorCheck"
+		resultVar 		"$keepColorCheck"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$originalColor" 
+		greaterVar 	"$color"
+		srcVar1		"$keepColorCheck"
+		srcVar2		"$zero"
+		resultVar		"$color"
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 5 : SPECIAL STUFF
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	IT			// This gets the amount of Boomer vomit the survivor has on him...
+	{
+		resultVar		"$boomerAmount"
+	}
+
+	LessOrEqual		// ... and injects it into $detailblendfactor if Boomer effects are active.
+	{
+		LessEqualVar 	"$detailblendfactor"
+		greaterVar 	"$boomerAmount"
+		srcVar1 		"$boomerEffects"
+		srcVar2 		"$zero" 
+		resultVar 		"$detailblendfactor"
+	}
+
+	BloodyHands		// This gets the amount of Blood there should be on the melee weapon...
+
+	{
+		resultVar		"$bloodAmount"
+	}
+
+	LessOrEqual		// ... and injects it into $detailblendfactor if Melee blood effects are active
+	{
+		LessEqualVar 	"$detailblendfactor"
+		greaterVar 	"$bloodAmount"
+		srcVar1 		"$meleeBloodEffects"
+		srcVar2 		"$zero" 
+		resultVar 		"$detailblendfactor"
+	}
+
+}
+
+}

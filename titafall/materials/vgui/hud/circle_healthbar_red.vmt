@@ -1,0 +1,11 @@
+UnlitGeneric
+{
+$translucent 1
+$basetexture "vgui\hud\circle_healthbar"
+$vertexcolor 1
+$vertexalpha 1
+$ignorez 1
+$no_fullbright 1
+
+$color "[0.99 0.04 0.04]"
+}

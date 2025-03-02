@@ -1,0 +1,9 @@
+ "AddonInfo"
+{
+     addonSteamAppID         550 //L4D2 Don't Change
+     addontitle              "Titanfall HUD" //Name for Addon Menu
+     addonversion            1
+     addonauthor             "aldsTM"
+     addonauthorSteamID      "AUTHOR_STEAM_ID" //Optional. the number of your steam profile URL
+     addonDescription        "Standby for Titanfall."
+}

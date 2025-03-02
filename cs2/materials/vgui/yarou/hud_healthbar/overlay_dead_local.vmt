@@ -1,0 +1,5 @@
+UnLitGeneric
+{
+$basetexture "vgui/yarou/hud_healthbar/overlay_dead_local"
+$translucent 1
+}

@@ -1,0 +1,1764 @@
+UnlitTwoTexture
+{
+
+	$basetexture 		"vgui/sys/slots"
+	$texture2			"vgui/sys/slots_lock"
+	
+	$translucent		"1"
+
+	$frame			"0"
+	$frame2			"0"
+
+	$masterToggle		"0.0"
+	$masterToggleSave		"0.0"
+	$masterToggleCheck	"0.0"
+
+	$r			"0.0"
+	$rInv			"0.0"
+	$rOffset			"0.0"
+
+	$timeSinceChange		"0.0"
+	
+	$alpha			"1.0"
+	$addFactor		".25"
+	$scale			"0.0"
+
+	$slotThatChanged		"0.0"
+	$slotThatChangedStored	"0.0"
+	$slotChangeCheck		"0.0"
+
+	$valueOfWhatChanged	"0.0"
+	$deltaOfWhatChanged	"0.0"
+	$deltaOfWhatChangedStored	"0.0"
+
+	$tempFRAC		"0.0"
+	$tempMULT		"0.0"
+	$tempDIV			"0.0"
+	$forceSYS		"0.0"
+
+	$slot1			"0.0"
+	$slot2			"0.0"
+	$slot3			"0.0"
+	$slot4			"0.0"
+	$slot5			"0.0"
+	$slot6			"0.0"
+	$slot7			"0.0"
+	$slot8			"0.0"
+	$slot9			"0.0"
+	$slot10			"0.0"
+	$slot11			"0.0"
+	$slot12			"0.0"
+	$slot13			"0.0"
+	$slot14			"0.0"
+	$slot15			"0.0"
+	$slot16			"0.0"
+	$slot17			"0.0"
+	$slot18			"0.0"
+	$slot19			"0.0"
+	$slot20			"0.0"
+	$slot21			"0.0"
+	$slot22			"0.0"
+	$slot23			"0.0"
+	$slot24			"0.0"
+	$slot25			"0.0"
+	$slot26			"0.0"
+	$slot27			"0.0"
+	$slot28			"0.0"
+	$slot29			"0.0"
+	$slot30			"0.0"
+
+	$slot1ST			"0.0"
+	$slot2ST			"0.0"
+	$slot3ST			"0.0"
+	$slot4ST			"0.0"
+	$slot5ST			"0.0"
+	$slot6ST			"0.0"
+	$slot7ST			"0.0"
+	$slot8ST			"0.0"
+	$slot9ST			"0.0"
+	$slot10ST		"0.0"
+	$slot11ST		"0.0"
+	$slot12ST		"0.0"
+	$slot13ST		"0.0"
+	$slot14ST		"0.0"
+	$slot15ST		"0.0"
+	$slot16ST		"0.0"
+	$slot17ST		"0.0"
+	$slot18ST		"0.0"
+	$slot19ST		"0.0"
+	$slot20ST		"0.0"
+	$slot21ST		"0.0"
+	$slot22ST		"0.0"
+	$slot23ST		"0.0"
+	$slot24ST		"0.0"
+	$slot25ST		"0.0"
+	$slot26ST		"0.0"
+	$slot27ST		"0.0"
+	$slot28ST		"0.0"
+	$slot29ST		"0.0"
+	$slot30ST		"0.0"
+
+	$mo			"-1"
+	$zero			"0.0"
+	$pf			"0.5"
+	$one			"1.0"
+	$two			"2.0"
+	$three			"3"
+	$four			"4"
+	$five			"5"
+	$six			"6"
+	$seven			"7"
+	$eight			"8"
+	$nine			"9"
+	$ten			"10"
+	$eleven			"11"
+	$twelve			"12"
+	$thirteen			"13"
+	$fourteen			"14"
+	$fifteen			"15"
+	$sixteen			"16"
+	$seventeen		"17"
+	$eighteen			"18"
+	$nineteen			"19"
+	$twenty			"20"
+	$twentyone		"21"
+	$twentytwo		"22"
+	$twentythree		"23"
+	$twentyfour		"24"
+	$twentyfive		"25"
+	$twentysix		"26"
+	$twentyseven		"27"
+	$twentyeight		"28"
+	$twentynine		"29"
+	$thirty			"30"
+	$oh			"100"
+
+
+Proxies
+{
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BLOCK 1 : BASICS
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	ConVar			
+	{
+		convar		"cl_buy_favorite_quiet"
+		resultVar		"$masterToggle"
+	}
+
+	Int
+	{
+		srcVar1 		"$masterToggle"
+		resultVar 		"$masterToggle"    
+	}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//	BLOCK 2 : DATA RETRIEVE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Retrive slots
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	ConVar			
+	{
+		convar		"budget_background_alpha"
+		resultVar		"$slot1"
+	}
+
+	ConVar			
+	{
+		convar		"budget_bargraph_background_alpha"
+		resultVar		"$slot2"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_height"
+		resultVar		"$slot3"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_width"
+		resultVar		"$slot4"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_x"
+		resultVar		"$slot5"
+	}
+
+	ConVar			
+	{
+		convar		"budget_panel_y"
+		resultVar		"$slot6"
+	}
+
+	ConVar			
+	{
+		convar		"budget_show_history"
+		resultVar		"$slot7"
+	}
+
+	ConVar			
+	{
+		convar		"budget_show_peaks"
+		resultVar		"$slot8"
+	}
+
+	ConVar			
+	{
+		convar		"hud_classautokill"
+		resultVar		"$slot9"
+	}
+
+	ConVar			
+	{
+		convar		"sc_pitch_sensitivity"
+		resultVar		"$slot10"
+	}
+
+	ConVar			
+	{
+		convar		"sc_pitch_sensitivity2"
+		resultVar		"$slot11"
+	}
+
+	ConVar			
+	{
+		convar		"sc_yaw_sensitivity"
+		resultVar		"$slot12"
+	}
+
+	ConVar			
+	{
+		convar		"sc_yaw_sensitivity2"
+		resultVar		"$slot13"
+	}
+
+	ConVar			
+	{
+		convar		"sc_mouse_sensitivity"
+		resultVar		"$slot14"
+	}
+
+	ConVar			
+	{
+		convar		"sc_mouse_sensitivity2"
+		resultVar		"$slot15"
+	}
+
+	ConVar			
+	{
+		convar		"sc_debug_sets"
+		resultVar		"$slot16"
+	}
+
+	ConVar			
+	{
+		convar		"npc_height_adjust"
+		resultVar		"$slot17"
+	}
+
+	ConVar			
+	{
+		convar		"overview_alpha"
+		resultVar		"$slot18"
+	}
+
+	ConVar			
+	{
+		convar		"overview_health"
+		resultVar		"$slot19"
+	}
+
+	ConVar			
+	{
+		convar		"overview_locked"
+		resultVar		"$slot20"
+	}
+
+	ConVar			
+	{
+		convar		"overview_names"
+		resultVar		"$slot21"
+	}
+
+	ConVar			
+	{
+		convar		"overview_tracks"
+		resultVar		"$slot22"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_background_alpha"
+		resultVar		"$slot23"
+	}
+
+	ConVar			
+	{
+		convar		"vprof_verbose"
+		resultVar		"$slot24"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_height"
+		resultVar		"$slot25"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_width"
+		resultVar		"$slot26"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_x"
+		resultVar		"$slot27"
+	}
+
+	ConVar			
+	{
+		convar		"texture_budget_panel_y"
+		resultVar		"$slot28"
+	}
+
+	ConVar			
+	{
+		convar		"vprof_graphwidth"
+		resultVar		"$slot29"
+	}
+
+	ConVar			
+	{
+		convar		"vprof_graphheight"
+		resultVar		"$slot30"
+	}
+
+	Abs
+	{
+		srcVar1 		"$slot29"
+		resultVar 		"$slot29"    
+	}
+
+	Abs
+	{
+		srcVar1 		"$slot30"
+		resultVar 		"$slot30"    
+	}
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Retrive modifications
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Subtract
+	{
+		srcVar1		"$slot1"
+		srcVar2 		"$slot1ST"
+		resultVar 		"$slot1ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot2"
+		srcVar2 		"$slot2ST"
+		resultVar 		"$slot2ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot3"
+		srcVar2 		"$slot3ST"
+		resultVar 		"$slot3ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot4"
+		srcVar2 		"$slot4ST"
+		resultVar 		"$slot4ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot5"
+		srcVar2 		"$slot5ST"
+		resultVar 		"$slot5ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot6"
+		srcVar2 		"$slot6ST"
+		resultVar 		"$slot6ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot7"
+		srcVar2 		"$slot7ST"
+		resultVar 		"$slot7ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot8"
+		srcVar2 		"$slot8ST"
+		resultVar 		"$slot8ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot9"
+		srcVar2 		"$slot9ST"
+		resultVar 		"$slot9ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot10"
+		srcVar2 		"$slot10ST"
+		resultVar 		"$slot10ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot11"
+		srcVar2 		"$slot11ST"
+		resultVar 		"$slot11ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot12"
+		srcVar2 		"$slot12ST"
+		resultVar 		"$slot12ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot13"
+		srcVar2 		"$slot13ST"
+		resultVar 		"$slot13ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot14"
+		srcVar2 		"$slot14ST"
+		resultVar 		"$slot14ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot15"
+		srcVar2 		"$slot15ST"
+		resultVar 		"$slot15ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot16"
+		srcVar2 		"$slot16ST"
+		resultVar 		"$slot16ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot17"
+		srcVar2 		"$slot17ST"
+		resultVar 		"$slot17ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot18"
+		srcVar2 		"$slot18ST"
+		resultVar 		"$slot18ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot19"
+		srcVar2 		"$slot19ST"
+		resultVar 		"$slot19ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot20"
+		srcVar2 		"$slot20ST"
+		resultVar 		"$slot20ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot21"
+		srcVar2 		"$slot21ST"
+		resultVar 		"$slot21ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot22"
+		srcVar2 		"$slot22ST"
+		resultVar 		"$slot22ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot23"
+		srcVar2 		"$slot23ST"
+		resultVar 		"$slot23ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot24"
+		srcVar2 		"$slot24ST"
+		resultVar 		"$slot24ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot25"
+		srcVar2 		"$slot25ST"
+		resultVar 		"$slot25ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot26"
+		srcVar2 		"$slot26ST"
+		resultVar 		"$slot26ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot27"
+		srcVar2 		"$slot27ST"
+		resultVar 		"$slot27ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot28"
+		srcVar2 		"$slot28ST"
+		resultVar 		"$slot28ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot29"
+		srcVar2 		"$slot29ST"
+		resultVar 		"$slot29ST"
+	}
+
+	Subtract
+	{
+		srcVar1		"$slot30"
+		srcVar2 		"$slot30ST"
+		resultVar 		"$slot30ST"
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Store the variable that was modified
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$one"
+		srcVar1 		"$slot1ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$two"
+		srcVar1 		"$slot2ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$three"
+		srcVar1 		"$slot3ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$four"
+		srcVar1 		"$slot4ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$five"
+		srcVar1 		"$slot5ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$six"
+		srcVar1 		"$slot6ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$seven"
+		srcVar1 		"$slot7ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$eight"
+		srcVar1 		"$slot8ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$nine"
+		srcVar1 		"$slot9ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$ten"
+		srcVar1 		"$slot10ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$eleven"
+		srcVar1 		"$slot11ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twelve"
+		srcVar1 		"$slot12ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$thirteen"
+		srcVar1 		"$slot13ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$fourteen"
+		srcVar1 		"$slot14ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$fifteen"
+		srcVar1 		"$slot15ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$sixteen"
+		srcVar1 		"$slot16ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$seventeen"
+		srcVar1 		"$slot17ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$eighteen"
+		srcVar1 		"$slot18ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$nineteen"
+		srcVar1 		"$slot19ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twenty"
+		srcVar1 		"$slot20ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentyone"
+		srcVar1 		"$slot21ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentytwo"
+		srcVar1 		"$slot22ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentythree"
+		srcVar1 		"$slot23ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentyfour"
+		srcVar1 		"$slot24ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentyfive"
+		srcVar1 		"$slot25ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentysix"
+		srcVar1 		"$slot26ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentyseven"
+		srcVar1 		"$slot27ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentyeight"
+		srcVar1 		"$slot28ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$twentynine"
+		srcVar1 		"$slot29ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$slotThatChanged"
+		greaterVar 	"$thirty"
+		srcVar1 		"$slot30ST"
+		srcVar2 		"$zero"
+		resultVar 		"$slotThatChanged"    
+	}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get the value of what changed
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot1"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$zero"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot2"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$one"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot3"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$two"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot4"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$three"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot5"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$four"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot6"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$five"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot7"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$six"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot8"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$seven"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot9"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$eight"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot10"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$nine"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot11"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$ten"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot12"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$eleven"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot13"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twelve"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot14"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$thirteen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot15"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$fourteen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot16"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$fifteen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot17"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$sixteen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot18"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$seventeen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot19"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$eighteen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot20"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$nineteen"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot21"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twenty"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot22"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyone"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot23"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentytwo"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot24"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentythree"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot25"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyfour"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot26"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyfive"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot27"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentysix"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot28"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyseven"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot29"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyeight"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$valueOfWhatChanged"
+		greaterVar 	"$slot30"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentynine"
+		resultVar 		"$valueOfWhatChanged"    
+	}
+
+	Frac
+	{
+		srcVar1 		"$valueOfWhatChanged"
+		resultVar 		"$tempFRAC"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempFRAC"
+		srcVar2 		"$oh"
+		resultVar 		"$tempMULT"    
+	}
+
+	Int
+	{
+		srcVar1 		"$tempMULT"
+		resultVar 		"$tempMULT"    
+	}
+
+	Divide
+	{
+		srcVar1 		"$tempMULT"
+		srcVar2 		"$two"
+		resultVar 		"$tempDIV"    
+	}
+	
+	Frac
+	{
+		srcVar1 		"$tempDIV"
+		resultVar 		"$tempDIV"    
+	}
+
+	Multiply
+	{
+		srcVar1 		"$tempDIV"
+		srcVar2 		"$two"
+		resultVar 		"$forceSYS"    
+	}
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Get the value delta of what changed
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot1ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$zero"
+		resultVar 		"$deltaOfWhatChanged"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot2ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$one"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot3ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$two"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot4ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$three"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot5ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$four"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot6ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$five"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot7ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$six"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot8ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$seven"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot9ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$eight"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot10ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$nine"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot11ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$ten"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot12ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$eleven"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot13ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twelve"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot14ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$thirteen"
+		resultVar 		"$deltaOfWhatChanged"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot15ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$fourteen"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot16ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$fifteen"
+		resultVar 		"$deltaOfWhatChanged"
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot17ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$sixteen"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot18ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$seventeen"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot19ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$eighteen"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot20ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$nineteen"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot21ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twenty"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot22ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyone"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot23ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentytwo"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot24ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentythree"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot25ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyfour"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot26ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyfive"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot27ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentysix"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot28ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyseven"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot29ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentyeight"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+	LessOrEqual
+	{
+		LessEqualVar 	"$deltaOfWhatChanged"
+		greaterVar 	"$slot30ST"
+		srcVar1 		"$slotThatChanged"
+		srcVar2 		"$twentynine"
+		resultVar 		"$deltaOfWhatChanged"    
+	}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BLOCK 3 : INJECTOR
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	Subtract
+	{
+		srcVar1		"$slotThatChanged"
+		srcVar2 		"$slotThatChangedStored"
+		resultVar 		"$slotChangeCheck"
+	}
+
+	Abs
+	{
+		srcVar1		"$slotChangeCheck"
+		resultVar 		"$slotChangeCheck"
+	}
+
+	LinearRamp		
+	{					
+		rate 		"$two"
+		resultVar 		"$r"
+	}
+
+	Multiply
+	{
+		srcVar1		"$mo"
+		srcVar2 		"$r"
+		resultVar 		"$rInv"
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$rOffset"
+          		greaterVar 	"$rInv"
+          	 	srcVar1 		"$slotChangeCheck"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$rOffset"    
+       	}
+	
+	Add
+      	{
+		srcVar1		"$r"
+		srcVar2 		"$rOffset"
+		resultVar 		"$timeSinceChange"
+       	}
+	
+	Subtract
+	{
+		srcVar1		"$one"
+		srcVar2 		"$timeSinceChange"
+		resultVar 		"$alpha"
+	}
+
+	Add
+      	{
+		srcVar1		"$alpha"
+		srcVar2 		"$one"
+		resultVar 		"$alpha"
+       	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$zero"
+          		greaterVar 	"$alpha"
+          	 	srcVar1 		"$alpha"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$alpha"    
+       	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$alpha"
+          		greaterVar 	"$one"
+          	 	srcVar1 		"$alpha"
+           	  	srcVar2 		"$one"          
+          	 	resultVar 		"$alpha"    
+       	}
+
+	Equals
+	{
+		srcVar1		"$slotThatChanged"
+		resultVar 		"$frame"
+	}
+
+	Add
+	{
+		srcVar1 		"$forceSYS"
+		srcVar2 		"$one"
+		resultVar 		"$frame2"    
+	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$deltaOfWhatChanged"
+          		greaterVar 	"$deltaOfWhatChangedStored"
+          	 	srcVar1 		"$timeSinceChange"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$deltaOfWhatChangedStored"    
+       	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$frame2"
+          		greaterVar 	"$zero"
+          	 	srcVar1 		"$deltaOfWhatChangedStored"
+           	  	srcVar2 		"$pf"          
+          	 	resultVar 		"$frame2"    
+       	}
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$zero"
+          		greaterVar 	"$alpha"
+          	 	srcVar1 		"$alpha"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$alpha"    
+       	}
+
+	LessOrEqual		// No show at start
+      	{
+          	  	LessEqualVar 	"$alpha"
+          		greaterVar 	"$zero"
+          	 	srcVar1 		"$deltaOfWhatChangedStored"
+           	  	srcVar2 		"$two"          
+          	 	resultVar 		"$alpha"    
+       	}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BLOCK 5 : STORE or RESET FOR NEXT PASS
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	LessOrEqual
+      	{
+          	  	LessEqualVar 	"$zero"
+          		greaterVar 	"$slotThatChanged"
+          	 	srcVar1 		"$alpha"
+           	  	srcVar2 		"$zero"          
+          	 	resultVar 		"$slotThatChanged"    
+       	}
+
+	Equals
+	{
+		srcVar1		"$slotThatChanged"
+		resultVar 		"$slotThatChangedStored"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot1"
+		resultVar 		"$slot1ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot2"
+		resultVar 		"$slot2ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot3"
+		resultVar 		"$slot3ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot4"
+		resultVar 		"$slot4ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot5"
+		resultVar 		"$slot5ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot6"
+		resultVar 		"$slot6ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot7"
+		resultVar 		"$slot7ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot8"
+		resultVar 		"$slot8ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot9"
+		resultVar 		"$slot9ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot10"
+		resultVar 		"$slot10ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot11"
+		resultVar 		"$slot11ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot12"
+		resultVar 		"$slot12ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot13"
+		resultVar 		"$slot13ST"
+	}
+
+
+	Equals
+	{
+		srcVar1		"$slot14"
+		resultVar 		"$slot14ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot15"
+		resultVar 		"$slot15ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot16"
+		resultVar 		"$slot16ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot17"
+		resultVar 		"$slot17ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot18"
+		resultVar 		"$slot18ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot19"
+		resultVar 		"$slot19ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot20"
+		resultVar 		"$slot20ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot21"
+		resultVar 		"$slot21ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot22"
+		resultVar 		"$slot22ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot23"
+		resultVar 		"$slot23ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot24"
+		resultVar 		"$slot24ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot25"
+		resultVar 		"$slot25ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot26"
+		resultVar 		"$slot26ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot27"
+		resultVar 		"$slot27ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot28"
+		resultVar 		"$slot28ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot29"
+		resultVar 		"$slot29ST"
+	}
+
+	Equals
+	{
+		srcVar1		"$slot30"
+		resultVar 		"$slot30ST"
+	}
+
+}
+
+
+}
